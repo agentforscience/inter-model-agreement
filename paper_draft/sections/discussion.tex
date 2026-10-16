@@ -1,0 +1,90 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\begin{table}[t]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{}p{4.3cm}p{2.3cm}p{6.3cm}@{}}
+        \toprule
+        \textbf{Sub-hypothesis} & \textbf{Verdict} & \textbf{Evidence} \\
+        \midrule
+        H1a: $r \in [0.4, 0.6]$ on factual and math & Mostly supported & \triviaqa 0.55, \mmlu 0.45, \mathfive 0.61 in range; \gsm 0.37 (few errors limit variance; AUROC 0.85). \\
+        H1b: $r < 0.2$ on ethics & Partly supported & \ethjus $r=0.20$ $[0.11, 0.29]$ on the boundary; \ethcs $r=0.33$. Significantly below factual and math, but not near zero. \\
+        H2a: vote beats best by 3--7\pp on factual QA & Not supported & $-2.4$ and $-1.8$\pp (n.s.); gains of about 2\pp only on math. \\
+        H2b: vote below best on ethics & Supported & $-4.8$\pp (Holm $p=0.008$) and $-4.2$\pp; the deficit grows with ensemble size. \\
+        H3: AUROC 0.70--0.80 on factual tasks & Supported (slightly exceeded) & \mmlu 0.78, \triviaqa 0.85, pooled 0.79 $[0.76, 0.82]$. \\
+        \bottomrule
+    \end{tabular}
+    \caption{Verdict on each sub-hypothesis.}
+    \label{tab:verdicts}
+\end{table}
+
+\Tabref{tab:verdicts} summarizes the verdict on each sub-hypothesis.
+We now discuss what the results mean.
+
+\para{Agreement is most informative when the answer space is large.}
+When answers are open-ended, as in \triviaqa and \mathfive, independent models rarely produce the same wrong string or number by chance.
+Agreement on such tasks is strong evidence of a correct answer, and unanimous answers are right 96--100\% of the time.
+Binary answer spaces remove much of this evidence.
+Models often agree by chance, and agreement can take only a few values.
+Comparisons of agreement across tasks should therefore account for the size of the answer space.
+Chance-corrected agreement measures are a natural next step.
+
+\para{Ethics is weaker for two distinct reasons.}
+The first reason is format.
+The binary factual control loses 0.056 AUROC relative to open and multiple-choice factual tasks, and it matches \ethcs.
+The second reason is specific to the domain.
+Errors are more correlated on ethics than on the control ($\phi$ 0.45--0.49 vs.\ 0.30), \ethjus is significantly below the control, and consensus errors show shared leanings, such as treating any punishment as wrong.
+Our hypothesis attributed the whole ethics deficit to shared bias.
+The data suggest that this explains only about half of the gap for commonsense morality, but a larger part for justice.
+Part of the measured ``error'' on ethics is also disagreement with crowd labels that are themselves debatable.
+
+\para{Ranking by agreement and voting are different uses of consensus.}
+Agreement ranks items well even where voting does not improve accuracy.
+On factual QA, knowledge is spread unevenly across models.
+The strongest model knows many facts that weaker models do not, and the plurality outvotes it.
+H2a implicitly assumed members of similar strength with independent errors.
+Our pool has neither property.
+In this regime, adding members dilutes the best model on factual tasks, and it reinforces shared mistakes on ethics.
+Math is the exception, because wrong chains of thought rarely land on the same answer.
+
+\para{Practical guidance.}
+Cross-model agreement is a good label-free {\em triage} signal.
+Practitioners can accept unanimous or near-unanimous answers on factual and math tasks, and send low-agreement items to a stronger model or to a human.
+It does not replace using the best available model, because a plurality vote over a mixed pool is not a free accuracy gain.
+For moral judgements, consensus among models should not stand in for human labels.
+Between 10\% and 17\% of unanimous \ethics verdicts contradict the crowd label, and adding models makes the vote worse relative to its best member.
+This matters for LLM-as-judge panels and synthetic preference data, where model consensus is often treated as ground truth.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+\para{Model scale and precision.}
+All models have 3.8--9B parameters and run at 4-bit precision, because only local open models on shared GPUs were available.
+Frontier models may be more accurate, more correlated with each other~\citep{goel2025greatmodels}, or both.
+The absolute vote-versus-best numbers in particular may not transfer.
+
+\para{Pool composition.}
+Each task has one clearly stronger model, and the vote-versus-best comparison depends strongly on this mix.
+The ensemble-size sweep and the one-per-family analysis address this only in part.
+
+\para{Ethics ground truth.}
+\ethics labels come from crowdworkers, and the hard test split is adversarially filtered.
+Some ``errors'' are label disagreements rather than model mistakes (\secref{sec:res_errors}).
+Correctness on ethics therefore partly means agreement with the norms of US crowdworkers.
+
+\para{Post-hoc choices.}
+We tightened the \triviaqa equivalence rule after inspecting errors, and we added the binary control after seeing the main results.
+Answer matching for \triviaqa and \mathfive is heuristic, and spot checks reveal remaining misses (\eg ``Land Rover'' vs.\ ``Jaguar Land Rover'').
+Most such misses lower the measured accuracy of high-agreement items, which makes our factual AUROC estimates conservative.
+
+\para{Prompting and determinism.}
+Each model gives one greedy answer, with direct answers on factual and ethics tasks.
+Chain of thought on ethics or \mmlu might change the agreement structure, and we did not test prompt variants.
+Long 4-bit chains of thought also change with batch composition, so individual \mathfive answers are not reproducible, even though accuracy is stable to within 2\pp.
+
+\para{Contamination and sample size.}
+All benchmarks are public and may appear in training data.
+This affects absolute accuracy more than the relation between agreement and correctness.
+With 500 items per task, confidence intervals on $r$ are about $\pm 0.07$, and vote-versus-best differences of 2\pp cannot be resolved.

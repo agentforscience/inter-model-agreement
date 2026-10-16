@@ -1,0 +1,9 @@
+LLM juries, ensemble labeling, and synthetic-data filters all rely on the same assumption: when several independent language models agree on an answer, the answer is probably correct.
+We test how far this assumption holds and whether it is weaker for ethical judgement, where models may share biases.
+We run 8 open-weight instruction models from 7 developer families on 3,500 items from 7 tasks: factual QA, math, two \ethics subsets, and a binary factual control matched to the ethics answer format.
+The agreement rate (the fraction of models giving the plurality answer) is a strong label-free correctness signal on factual and math tasks (AUROC 0.78--0.91, point-biserial $r$ 0.37--0.61).
+It is clearly weaker on ethics (AUROC 0.63--0.71, $r$ 0.20--0.33; pooled factual minus ethics $\Delta$AUROC $=+0.12$, 95\% CI $[0.08, 0.17]$).
+However, the binary factual control reaches only AUROC 0.735, which is indistinguishable from \ethics commonsense, so answer format explains about half of the gap.
+The plurality vote beats the best single model only on math ($+2.0$ to $+2.4$\pp). It is 1.8--2.4\pp below the best model on factual QA, a difference that is not significant, and significantly below it on ethics ($-4.8$\pp, Holm $p=0.008$).
+On ethics, model errors are more correlated than on the control (error $\phi$ 0.45--0.49 vs.\ 0.30), and the vote's deficit grows as models are added.
+Cross-model agreement is therefore a useful triage signal for factual and math answers, but it should not replace human labels for moral judgements: 10--17\% of unanimous \ethics verdicts contradict the human label.

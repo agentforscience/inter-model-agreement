@@ -1,0 +1,23 @@
+\begin{table}[t]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llccccc@{}}
+        \toprule
+        \textbf{Dataset} & \textbf{Best model} & \makecell{Vote $-$ best\\{[95\% CI]}} & \makecell{McNemar\\$p$ (Holm)} & \makecell{vs.\ half-split\\best} & \makecell{Mean 5-subset\\vote $-$ best} & \makecell{One per\\family} \\
+        \midrule
+        \triviaqa & gemma2-9b (0.725) & $-2.4$ [$-5.1$, $0.0$] & 0.35 & $-2.3$ & $-4.6$ & $-1.6$ \\
+        \mmlu     & qwen3-8b (0.728)  & $-1.8$ [$-5.0$, $+1.6$] & 0.71 & $-1.4$ & $-1.5$ & $-0.6$ \\
+        \gsm      & qwen3-8b (0.928)  & {\bf +2.4} [$+0.6$, $+4.0$] & 0.085 & {\bf +3.2} & {\bf +1.5} & {\bf +1.8} \\
+        \mathfive & qwen3-8b (0.756)  & +2.0 [$-0.8$, $+4.6$] & 0.55 & +3.1 & $-0.7$ & +0.4 \\
+        \ethcs    & gemma2-9b (0.830) & $-4.8$ [$-7.6$, $-2.2$] & {\bf 0.008} & $-4.7$ & $-2.9$ & $-4.2$ \\
+        \ethjus   & gemma2-9b (0.788) & $-4.2$ [$-7.2$, $-1.2$] & 0.067 & $-4.0$ & $-2.7$ & $-5.4$ \\
+        \midrule
+        \mmlutf   & gemma2-9b (0.724) & $-0.6$ [$-4.2$, $+3.0$] & 0.83 & +1.5 & +0.1 & $-1.0$ \\
+        \bottomrule
+    \end{tabular}}
+    \caption{Plurality vote minus best single model, in percentage points.
+    ``Best'' is chosen on the test set (an oracle choice that favors the baseline), on a random half of items (mean of 200 splits), within each of the 56 five-model subsets, or within a pool of one model per family (qwen3-8b removed).
+    Largest gain and the only significant McNemar test after Holm correction in \textbf{bold}.
+    The vote helps only on math and is consistently worse than the best model on ethics.}
+    \label{tab:vote}
+\end{table}

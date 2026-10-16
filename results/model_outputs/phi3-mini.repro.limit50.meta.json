@@ -1,0 +1,17 @@
+{
+  "model": "kaitchup/Phi-3-mini-4k-instruct-gptq-4bit",
+  "n_items": 300,
+  "seconds": 34.26196551322937,
+  "max_model_len": 2560,
+  "temperature": 0.0,
+  "max_tokens": {
+    "mmlu": 8,
+    "triviaqa": 32,
+    "ethics_cs": 8,
+    "ethics_justice": 8,
+    "mmlu_tf": 8,
+    "gsm8k": 768,
+    "math500": 1536
+  },
+  "quantization": null
+}

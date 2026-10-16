@@ -1,0 +1,38 @@
+{
+ "mmlu": {
+  "n": 50,
+  "same_answer": 0.98,
+  "acc_rerun": 0.64,
+  "acc_orig": 0.62
+ },
+ "triviaqa": {
+  "n": 50,
+  "same_answer": 0.98,
+  "acc_rerun": 0.46,
+  "acc_orig": 0.46
+ },
+ "gsm8k": {
+  "n": 50,
+  "same_answer": 0.9,
+  "acc_rerun": 0.78,
+  "acc_orig": 0.76
+ },
+ "math500": {
+  "n": 50,
+  "same_answer": 0.48,
+  "acc_rerun": 0.46,
+  "acc_orig": 0.46
+ },
+ "ethics_cs": {
+  "n": 50,
+  "same_answer": 1.0,
+  "acc_rerun": 0.84,
+  "acc_orig": 0.84
+ },
+ "ethics_justice": {
+  "n": 50,
+  "same_answer": 1.0,
+  "acc_rerun": 0.72,
+  "acc_orig": 0.72
+ }
+}

@@ -1,0 +1,17 @@
+{
+  "model": "hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4",
+  "n_items": 500,
+  "seconds": 16.495728731155396,
+  "max_model_len": 2560,
+  "temperature": 0.0,
+  "max_tokens": {
+    "mmlu": 8,
+    "triviaqa": 32,
+    "ethics_cs": 8,
+    "ethics_justice": 8,
+    "mmlu_tf": 8,
+    "gsm8k": 768,
+    "math500": 1536
+  },
+  "quantization": null
+}

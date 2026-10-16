@@ -1,0 +1,27 @@
+\begin{table*}[t]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llcccccccc@{}}
+        \toprule
+        & & \multicolumn{4}{c}{\textbf{Agreement as a correctness signal}} & \multicolumn{4}{c}{\textbf{Consensus statistics}} \\
+        \cmidrule(lr){3-6} \cmidrule(lr){7-10}
+        \textbf{Dataset} & \textbf{Domain} & \makecell{$r$\\{[95\% CI]}} & \makecell{AUROC\\{[95\% CI]}} & \makecell{\loo\\AUROC} & \makecell{Self-prob.\\AUROC} & \makecell{Error\\$\phi$} & \makecell{Unani-\\mous (\%)} & \makecell{Acc.\ if\\unanimous} & \makecell{$\geq$75\% agree,\\wrong (\%)} \\
+        \midrule
+        \triviaqa & factual & 0.548 [0.48, 0.61] & 0.845 [0.80, 0.88] & 0.888 & 0.803 & 0.50 & 14.3 & 0.957 & 2.2 \\
+        \mmlu     & factual & 0.446 [0.37, 0.52] & 0.781 [0.74, 0.82] & 0.845 & 0.717 & 0.40 & 27.4 & 0.971 & 8.0 \\
+        \gsm      & math    & 0.368 [0.24, 0.48] & 0.849 [0.75, 0.93] & 0.951 & --    & 0.36 & 45.0 & 0.991 & 1.4 \\
+        \mathfive & math    & {\bf 0.612} [0.56, 0.66] & {\bf 0.910} [0.88, 0.94] & {\bf 0.969} & --    & 0.40 & 6.6  & {\bf 1.000} & {\bf 0.4} \\
+        \ethcs    & ethics  & 0.327 [0.24, 0.41] & 0.711 [0.66, 0.76] & 0.756 & 0.602 & 0.45 & 49.4 & 0.903 & 13.8 \\
+        \ethjus   & ethics  & 0.201 [0.11, 0.29] & 0.626 [0.58, 0.68] & 0.691 & 0.596 & 0.49 & 46.8 & 0.833 & 19.4 \\
+        \midrule
+        \mmlutf   & control & 0.373 [0.30, 0.45] & 0.735 [0.69, 0.78] & 0.765 & 0.587 & 0.30 & 30.4 & 0.934 & 13.4 \\
+        \bottomrule
+    \end{tabular}}
+    \caption{Agreement among 8 models as a label-free correctness signal.
+    $r$ and AUROC measure how well the agreement rate predicts the correctness of the plurality answer.
+    \loo AUROC scores each model's answer by the fraction of the other 7 models that agree with it; self-prob.\ AUROC uses the model's own sequence probability (both averaged over the 8 models; self-probability is reported for direct-answer tasks only).
+    The last column is the share of all items on which at least 6 of 8 models agree on a wrong answer.
+    Best signal in \textbf{bold}.
+    Agreement is strongest on math and weakest on ethics; \loo agreement beats self-probability on every task where both are available.}
+    \label{tab:signal}
+\end{table*}

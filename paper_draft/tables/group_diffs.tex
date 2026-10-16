@@ -1,0 +1,20 @@
+\begin{table}[t]
+    \centering
+    \small
+    \begin{tabular}{@{}lcc@{}}
+        \toprule
+        \textbf{Comparison} & $\Delta$AUROC [95\% CI] & $\Delta r$ [95\% CI] \\
+        \midrule
+        Factual (open + MC) $-$ ethics & +0.124 [+0.078, +0.172]$^{***}$ & +0.211 [+0.134, +0.292]$^{***}$ \\
+        Math $-$ ethics & +0.246 [+0.201, +0.291]$^{***}$ & +0.319 [+0.239, +0.395]$^{***}$ \\
+        \midrule
+        Factual (open + MC) $-$ \mmlutf & +0.056 [+0.007, +0.108]$^{*}$ & +0.102 [+0.012, +0.195]$^{*}$ \\
+        \mmlutf $-$ ethics (pooled) & +0.068 [+0.010, +0.127]$^{*}$ & +0.110 [+0.005, +0.203]$^{*}$ \\
+        \mmlutf $-$ \ethcs & +0.024 [$-$0.044, +0.094] & +0.045 [$-$0.065, +0.164] \\
+        \mmlutf $-$ \ethjus & +0.109 [+0.040, +0.182]$^{**}$ & +0.171 [+0.062, +0.293]$^{***}$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Differences in AUROC and $r$ between groups of tasks (two-sample bootstrap, 2,000 resamples; $^{*}p<0.05$, $^{**}p<0.01$, $^{***}p<0.001$).
+    The binary factual control lies roughly halfway between the factual tasks and the pooled ethics tasks. It is indistinguishable from \ethcs but clearly above \ethjus.}
+    \label{tab:groups}
+\end{table}

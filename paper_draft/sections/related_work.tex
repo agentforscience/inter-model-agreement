@@ -1,0 +1,30 @@
+\section{Related Work}
+\label{sec:related}
+
+\para{Agreement within a single model.}
+Self-consistency samples several reasoning chains from one model and takes the most common final answer~\citep{wang2023selfconsistency}.
+It improves math accuracy, and the vote margin predicts correctness.
+Related methods use disagreement between samples to flag hallucinations~\citep{manakul2023selfcheckgpt,kuhn2023semantic}, or use the model's own token probabilities as a confidence score~\citep{kadavath2022know}.
+Unlike these works, we measure agreement {\em across} models with different training pipelines, using a single greedy answer per model.
+We also compare it directly with each model's own sequence probability as a single-model baseline.
+
+\para{Ensembles and LLM panels.}
+Classical ensemble theory says that voting helps when members are accurate and their errors are diverse~\citep{dietterich2000ensemble,kuncheva2003diversity}.
+For LLMs, \citet{li2024moreagents} report that accuracy grows with the number of sampled agents, and LLM-Blender ranks and fuses outputs from several models~\citep{jiang2023llmblender}.
+\citet{verga2024juries} replace a single large judge with a panel of smaller models from different families and report better agreement with humans.
+Building on this line of work, we test whether a plurality vote over a diverse pool beats the {\em best} member, not just the average one, and how the answer changes across domains and ensemble sizes.
+
+\para{Correlated errors across models.}
+Recent studies find that LLM errors are strongly correlated, and more so for more capable models or models that share a developer or base model~\citep{goel2025greatmodels,kim2025correlated}.
+\citet{goel2025greatmodels} argue that this similarity weakens AI oversight, because a judge model tends to favor models that resemble it.
+We study the consequence of correlated errors for consensus as a correctness signal, and we compare error correlation across factual, math and ethics tasks under a format-matched control.
+
+\para{Machine ethics benchmarks.}
+\ethics~\citep{hendrycks2021ethics} collects crowd-labeled moral judgements about everyday scenarios. Its ``hard'' test split is adversarially filtered, and some of its items are ambiguous.
+Other datasets record several human judgements per item, \eg Scruples~\citep{lourie2021scruples} and MoralChoice~\citep{scherrer2023moralchoice}, which allows a comparison with human disagreement.
+We use \ethics because it has a single reference label per item, which lets us define correctness in the same way as for factual tasks.
+We then examine where model consensus and the crowd label part ways.
+
+\para{Selective prediction.}
+Abstaining on low-confidence inputs trades coverage for accuracy~\citep{geifman2017selective}.
+We evaluate inter-model agreement as a label-free abstention rule and report coverage--accuracy curves per task.

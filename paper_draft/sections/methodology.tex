@@ -1,0 +1,130 @@
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Problem formulation}
+\label{sec:formulation}
+
+Let $\gM = \{m_1, \dots, m_M\}$ be a pool of $M=8$ models, and let $x$ be a test item with reference answer $y^\star$.
+Each model gives one answer $\hat y_j(x)$.
+We group the answers into equivalence classes using a task-specific equivalence relation $\equiv$ (\secref{sec:tasks}).
+An answer that cannot be parsed counts as wrong and casts no vote.
+Let $G_1, \dots, G_K$ be the resulting groups.
+The {\bf plurality answer} $\hat y(x)$ is the answer of the largest group, with ties broken by a fixed model order.
+The {\bf agreement rate} is
+\begin{equation}
+    a(x) = \frac{1}{M}\max_{k} |G_k| \in \Big\{\tfrac{1}{8}, \tfrac{2}{8}, \dots, 1\Big\}.
+    \label{eq:agreement}
+\end{equation}
+We call an item {\em unanimous} if $a(x)=1$.
+Let $c(x) = \mathbf{1}[\hat y(x) \equiv y^\star]$ be the correctness of the plurality answer.
+Our question is how well $a(x)$ predicts $c(x)$ without access to $y^\star$.
+
+\subsection{Models}
+\label{sec:models}
+
+API keys for commercial models were not available, so we run open-weight instruction models locally with vLLM~\citep{kwon2023vllm} on shared NVIDIA RTX A6000 GPUs.
+Each GPU had only 6--10\,GB of free memory, so every model uses a 4-bit weight-only checkpoint (AWQ~\citep{lin2024awq} or GPTQ~\citep{frantar2023gptq}, W4A16).
+All models therefore share the same precision.
+The pool contains 8 models from 7 developer families (\tabref{tab:models}).
+We decode greedily (temperature 0, seed 42) with each model's own chat template, a single user turn, and no system prompt.
+Qwen3 runs in non-thinking mode.
+The maximum number of new tokens is 8 for \mmlu, \ethics and \mmlutf, 32 for \triviaqa, 768 for \gsm, and 1,536 for \mathfive.
+The full set of generations took about 1.4 GPU-hours.
+
+\begin{table}[t]
+    \centering
+    \small
+    \begin{tabular}{@{}lll@{}}
+        \toprule
+        \textbf{Key} & \textbf{4-bit checkpoint} & \textbf{Family} \\
+        \midrule
+        qwen2.5-7b  & Qwen2.5-7B-Instruct-AWQ & Alibaba Qwen \\
+        qwen3-8b    & Qwen3-8B-AWQ (non-thinking) & Alibaba Qwen \\
+        llama3.1-8b & Meta-Llama-3.1-8B-Instruct-AWQ-INT4 & Meta \\
+        gemma2-9b   & gemma-2-9b-it-AWQ-INT4 & Google \\
+        mistral-7b  & Mistral-7B-Instruct-v0.3-AWQ & Mistral \\
+        falcon3-7b  & Falcon3-7B-Instruct-AWQ & TII \\
+        olmo3-7b    & Olmo-3-7B-Instruct-gptq-w4a16-g128 & AI2 \\
+        phi3-mini   & Phi-3-mini-4k-instruct-gptq-4bit & Microsoft \\
+        \bottomrule
+    \end{tabular}
+    \caption{The model pool: 8 instruction-tuned models (3.8B--9B parameters) from 7 developer families, all run at the same 4-bit weight-only precision.}
+    \label{tab:models}
+\end{table}
+
+\subsection{Tasks}
+\label{sec:tasks}
+
+We sample 500 items per task with seed 42 (\tabref{tab:tasks}).
+\triviaqa's validation split repeats 9 question ids, so we remove the duplicates and keep $n=491$.
+Factual and ethics tasks ask for a direct answer.
+Math tasks ask for a chain of thought followed by a final answer.
+
+\para{Answer equivalence.}
+For \mmlu, the answer is a letter.
+For \gsm, we compare numbers.
+For \mathfive, we compare \LaTeX{} strings after normalizing fractions, \texttt{\textbackslash left}/\texttt{\textbackslash right}, \texttt{\textbackslash text\{\}} and similar markup.
+For \triviaqa, we apply SQuAD-style normalization and strip accents and plurals.
+A \triviaqa answer is correct if it contains a gold alias.
+Two \triviaqa answers agree if they match exactly, or if one contains the other and the shorter one has at least two tokens.
+The two-token rule keeps agreement close to transitive: with one-token containment, an answer like ``eggs'' would match every answer ending in ``eggs''.
+
+\para{Binary factual control.}
+\ethics answers are binary, while \triviaqa and \mathfive have open answer spaces.
+A binary answer space produces high agreement by chance and allows only coarse agreement levels.
+To separate this format effect from the domain effect, we build \mmlutf.
+Each item shows an \mmlu question with one proposed answer and asks whether the answer is true or false.
+The proposed answer is the gold option for 50\% of items and a random distractor for the rest.
+The \mmlutf questions do not overlap with the main \mmlu sample.
+
+\begin{table}[t]
+    \centering
+    \small
+    \begin{tabular}{@{}lllll@{}}
+        \toprule
+        \textbf{Dataset} & \textbf{Domain} & \textbf{Split} & \textbf{Answer format} & \textbf{Equivalence} \\
+        \midrule
+        \triviaqa & factual & rc.nocontext, val. & open short answer & normalized string \\
+        \mmlu & factual & test, moral\_* excluded & 4-way MC & letter \\
+        \gsm & math & test & CoT $\to$ number & numeric \\
+        \mathfive & math & test & CoT $\to$ \texttt{\textbackslash boxed\{\}} & normalized \LaTeX{} \\
+        \ethcs & ethics & commons., test\_hard, short & wrong / acceptable & label word \\
+        \ethjus & ethics & justice, test\_hard & (un)reasonable & label word \\
+        \midrule
+        \mmlutf (control) & factual & \mmlu test, disjoint items & true / false & label word \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tasks: \triviaqa~\citep{joshi2017triviaqa}, \mmlu~\citep{hendrycks2021mmlu}, \gsm~\citep{cobbe2021gsm8k}, \mathfive~\citep{hendrycks2021math,lightman2024verify} and \ethics~\citep{hendrycks2021ethics}. CoT = chain of thought; MC = multiple choice. Each has 500 items (491 for \triviaqa after removing duplicates). \mmlutf is a binary factual control whose answer format matches \ethics.}
+    \label{tab:tasks}
+\end{table}
+
+Most model--task pairs have parse-failure rates of 0--2.6\%.
+\mathfive is the exception, with 3--22\%: Gemma-2 often omits \texttt{\textbackslash boxed\{\}}, and Qwen3 and Llama sometimes reach the token limit.
+
+\subsection{Metrics and baselines}
+\label{sec:metrics}
+
+\para{Agreement as a correctness signal.}
+We report the point-biserial correlation $r$ between $a(x)$ and $c(x)$, and the AUROC of $a(x)$ as a score for predicting $c(x)$.
+We also report a {\bf leave-one-out (\loo)} variant that scores each model's own answer.
+For model $m_j$, the score is the fraction of the other 7 models that agree with $\hat y_j(x)$.
+We compute its AUROC for predicting whether $\hat y_j(x)$ is correct and average over the 8 models.
+As a single-model, label-free baseline, we use each model's own {\bf sequence probability} for its answer.
+We report this baseline only on the direct-answer tasks, because the probability of a long chain of thought is not a meaningful confidence score.
+
+\para{Vote versus the best model.}
+Our main comparison is plurality-vote accuracy minus the accuracy of the best single model.
+We pick the best model on the test set itself, which is an oracle choice that favors the baseline.
+We also report three variants:
+(a) the best model chosen on a random half of the items and scored on the other half, averaged over 200 splits;
+(b) the mean, over all 56 five-model subsets, of the vote minus the best model in that subset;
+(c) a sweep over ensemble size $k=3,\dots,8$, averaging over all subsets of each size.
+
+\para{Error structure.}
+We compute the mean pairwise $\phi$ correlation between the error indicators of different models.
+We also compute $P(\text{same wrong answer} \mid \text{both wrong})$, and the share of items with $a(x) \geq 0.75$ (at least 6 of 8 models) whose plurality answer is wrong.
+
+\para{Statistics.}
+We compute 95\% percentile bootstrap confidence intervals with 1,000 resamples, or 2,000 for group differences.
+We compare the vote with the best model using an exact McNemar test, with Holm correction across the 7 datasets.
+Domain differences in $r$ and AUROC use a two-sample bootstrap; pooled domain estimates concatenate the items of the tasks in that domain.

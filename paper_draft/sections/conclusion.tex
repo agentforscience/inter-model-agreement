@@ -1,0 +1,17 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We studied how far agreement among independent LLMs predicts the correctness of their answers.
+We used 8 open-weight models from 7 families on factual, math and ethics tasks, plus a format-matched binary factual control.
+Agreement is a strong label-free correctness signal for factual (AUROC 0.78--0.85) and math answers (0.85--0.91), and a much weaker one for ethical judgements (0.63--0.71).
+Only part of the ethics gap reflects shared model bias.
+The rest comes from the binary answer format and from noise in the crowd labels.
+Plurality voting beats the best single model only on math.
+It is neutral to slightly harmful on factual QA, and significantly harmful on ethics, where the deficit grows with every model added, as correlated errors would predict.
+The key takeaway is that model consensus is a useful filter for facts and math, but not a substitute for human judgement on moral questions.
+
+Several directions follow from this work.
+First, repeating the study with frontier API models would test whether stronger models are also more correlated.
+Second, chance-corrected agreement and binary versions of open-ended tasks would further separate format from domain.
+Third, moral-judgement datasets with several annotations per item, such as Scruples~\citep{lourie2021scruples} or MoralChoice~\citep{scherrer2023moralchoice}, would let us test whether model agreement tracks {\em human} agreement rather than majority labels.
+Finally, accuracy-weighted voting, agreement combined with self-probability, and a comparison with within-model self-consistency at matched compute~\citep{wang2023selfconsistency} could make consensus more reliable.

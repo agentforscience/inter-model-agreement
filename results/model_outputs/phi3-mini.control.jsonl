@@ -1,0 +1,500 @@
+{"id": "mmlu_tf-3", "text": " True.\n\nThe first statement is", "first_tok_prob": 0.7746626443865977, "cum_logprob": -0.9159654551076457, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.9951896721266993, "cum_logprob": -1.5412834720554827, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-48", "text": " False.\n\nThe first statement is", "first_tok_prob": 0.9876955569321756, "cum_logprob": -0.8037868298123954, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-55", "text": " True.\n\nExplanation:", "first_tok_prob": 0.9862442532011336, "cum_logprob": -0.8871173244313013, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-61", "text": " True. Both statements are true.\n", "first_tok_prob": 0.9577769478040509, "cum_logprob": -1.7603365517652492, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-65", "text": " False.\n\n\nWhile it", "first_tok_prob": 0.6788260059235581, "cum_logprob": -3.300802903128897, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-80", "text": " True.\n\nThe first statement is", "first_tok_prob": 0.858487454817616, "cum_logprob": -0.9704840725053145, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-117", "text": " True. Male hormones, particularly", "first_tok_prob": 0.9999940395710211, "cum_logprob": -1.6806063049521072, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-124", "text": " False. The spheno-oc", "first_tok_prob": 0.9999367038714213, "cum_logprob": -0.39327788667139885, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-161", "text": " True.\n\nThe glossoph", "first_tok_prob": 0.9999963045256735, "cum_logprob": -0.8291338361464113, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-163", "text": " True.\n\nBlood flows", "first_tok_prob": 0.9999395645427589, "cum_logprob": -0.6756226366911733, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-168", "text": " True.\n\nThe isthmus", "first_tok_prob": 0.7310549835701506, "cum_logprob": -0.8256756064251931, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-182", "text": " True.\n\nThe cerebro", "first_tok_prob": 0.9999935627400018, "cum_logprob": -0.46595088790760997, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-201", "text": " False. The lateral pterygo", "first_tok_prob": 0.9999862911193472, "cum_logprob": -0.019014785403101087, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-202", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999398029324065, "cum_logprob": -1.1355337599788982, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-206", "text": " True.", "first_tok_prob": 0.999940398906774, "cum_logprob": -0.3553337660559919, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-236", "text": " False.\n\nKnowing the", "first_tok_prob": 0.9999738938465109, "cum_logprob": -0.7458315213409534, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-240", "text": " False. The correct expression for the total", "first_tok_prob": 0.9950774049168977, "cum_logprob": -1.6854974458692027, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-275", "text": " True.\n\nThe proposed answer refers", "first_tok_prob": 0.9999221623902257, "cum_logprob": -1.8249977922532423, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-295", "text": " True.\n\nAsteroids", "first_tok_prob": 0.9999850990607846, "cum_logprob": -0.1003701470967826, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-302", "text": " True. The Pleiades, also", "first_tok_prob": 0.9556635248720078, "cum_logprob": -0.6844470575272226, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-324", "text": " True.\n\n\nMoons,", "first_tok_prob": 0.9999313401638235, "cum_logprob": -1.6194092983786277, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-342", "text": " False.\n\nA kilogram of", "first_tok_prob": 0.9999983310727032, "cum_logprob": -1.3224934981584227, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-348", "text": " True.\n\nThe formula provided,", "first_tok_prob": 0.9998744883679331, "cum_logprob": -2.6492552976615116, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-355", "text": " False.\n\nThe proposed answer does", "first_tok_prob": 0.9889975515868603, "cum_logprob": -1.7125463594056782, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-364", "text": " False. The proposed answer is not correct", "first_tok_prob": 0.9990794795576202, "cum_logprob": -1.5610085772057687, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-373", "text": " True.\n\nThe Jovian", "first_tok_prob": 0.6224542469940391, "cum_logprob": -2.584382715297579, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-403", "text": " True. While the primary objective of a", "first_tok_prob": 0.9999697217572346, "cum_logprob": -1.8798545339450357, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-601", "text": " False. The correct term for an alle", "first_tok_prob": 0.9999961853172863, "cum_logprob": -0.7223161964429892, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-684", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9992891837729633, "cum_logprob": -1.6281032747792779, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-688", "text": " True.\n\nThe enzymes", "first_tok_prob": 0.9999970197767496, "cum_logprob": -0.38937018782687005, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-707", "text": " False. Passive movements refer to movements", "first_tok_prob": 0.9999955892755635, "cum_logprob": -0.5106945378188357, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-729", "text": " False. Eccrine and ap", "first_tok_prob": 0.9999737746439785, "cum_logprob": -0.4131189574227321, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-739", "text": " True.\n\nGlucose", "first_tok_prob": 0.9999777083605178, "cum_logprob": -0.2983466662908256, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-793", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999805692637573, "cum_logprob": -1.1053672764173825, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-824", "text": " True.\n\nAnnelids (", "first_tok_prob": 0.9998736541243901, "cum_logprob": -1.0716119306925975, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-827", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.9998411192709713, "cum_logprob": -1.8995202094492925, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-867", "text": " False.\n\nA competitive in", "first_tok_prob": 0.9999729402230112, "cum_logprob": -0.5317237608813272, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-888", "text": " True.\n\nThe presence of gray", "first_tok_prob": 0.9999610200823912, "cum_logprob": -0.8308171750086331, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-942", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9986265712709013, "cum_logprob": -0.6136122750622235, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-977", "text": " False. The proposed answer does not provide", "first_tok_prob": 0.9941583798517425, "cum_logprob": -1.3802094621350989, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-994", "text": " True.\n\nDimethylnit", "first_tok_prob": 0.6224092078101401, "cum_logprob": -1.9052358616427227, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1067", "text": " False. While statement I is true,", "first_tok_prob": 0.9998390933571737, "cum_logprob": -2.4093172531866003, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1131", "text": " False.\n\nHere's the", "first_tok_prob": 0.9719413414728618, "cum_logprob": -1.327993020149563, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1319", "text": " True. The proposed answer is correct.", "first_tok_prob": 0.9947767335845862, "cum_logprob": -2.170488885603845, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1329", "text": " True. The lining of the dig", "first_tok_prob": 0.9999969005680498, "cum_logprob": -0.18542791598406438, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1348", "text": " False. The energy for all forms of", "first_tok_prob": 0.9999948740268748, "cum_logprob": -0.6537633397744855, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1422", "text": " False.\n\nThe correct relationship between", "first_tok_prob": 0.9984886871983316, "cum_logprob": -2.321279158877587, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1439", "text": " False. The proposed answer does not take", "first_tok_prob": 0.9999728210205924, "cum_logprob": -2.5147120158744585, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1521", "text": " False.\n\n\nThe proposed answer", "first_tok_prob": 0.9995476862197713, "cum_logprob": -1.9332024784707755, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1530", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.999977350747961, "cum_logprob": -1.13427504230458, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1536", "text": " True.\n\nExplanation:", "first_tok_prob": 0.9984974821411757, "cum_logprob": -0.15135820546953482, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1577", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.9889921872562636, "cum_logprob": -1.1338477862882144, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1589", "text": " False.\n\n\nWhen you s", "first_tok_prob": 0.9999874831811497, "cum_logprob": -1.1218897877606366, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1593", "text": " False.\n\n\nThe proposed answer", "first_tok_prob": 0.9046420268098455, "cum_logprob": -0.3268906037555439, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1602", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999655497017356, "cum_logprob": -0.6750559610909477, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1612", "text": " False. The proposed answer is not complete", "first_tok_prob": 0.9984917773108406, "cum_logprob": -2.4753089154546615, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1643", "text": " True.\n\nThe speed of sound", "first_tok_prob": 0.9999984502816872, "cum_logprob": -0.29757861386849527, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1647", "text": " False. The proposed answer is not correct", "first_tok_prob": 0.9945468683879324, "cum_logprob": -1.9888414149172604, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1660", "text": " False.\n\nThe phenomenon of", "first_tok_prob": 0.880751268426092, "cum_logprob": -0.5707999037849163, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1670", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999651921008026, "cum_logprob": -0.9185066014465519, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1686", "text": " True.\n\nWhen water changes to", "first_tok_prob": 0.9999935627400018, "cum_logprob": -0.17855937914055175, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1692", "text": " False.\n\nTo calculate the voltage", "first_tok_prob": 0.9999750858798929, "cum_logprob": -1.8043289399920468, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1719", "text": " True.\n\nThe vibrations", "first_tok_prob": 0.9999983310727032, "cum_logprob": -0.6750739346266528, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1726", "text": " False. The proposed answer does not correctly", "first_tok_prob": 0.9999991655356624, "cum_logprob": -1.8468395760567091, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1733", "text": " False.\n\nTo determine the correct", "first_tok_prob": 0.9984947485192963, "cum_logprob": -1.444322859038266, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1772", "text": " True.\n\nThe impulse-", "first_tok_prob": 0.9999365846769599, "cum_logprob": -0.05052112805276465, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1815", "text": " False. The value of the GAR", "first_tok_prob": 0.9975266983576416, "cum_logprob": -0.6620485008085097, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1843", "text": " False.\n\nThe \"within", "first_tok_prob": 0.9985922155911001, "cum_logprob": -0.7935514639139001, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1849", "text": " True. The proposed answer is actually correct", "first_tok_prob": 0.9626727395290742, "cum_logprob": -1.1385159997444134, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1860", "text": " False.\n\n\nThe correct answer", "first_tok_prob": 0.9706859742040247, "cum_logprob": -1.161796124652028, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1903", "text": " False. The correct statements are (iii", "first_tok_prob": 0.9999599472811979, "cum_logprob": -1.5390089146237642, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1938", "text": " True.\n\n\nThe ALE", "first_tok_prob": 0.6791361307879191, "cum_logprob": -1.777080743398983, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1947", "text": " True.\n\nHowever, the proposed", "first_tok_prob": 0.9042610280780389, "cum_logprob": -1.5729762315481821, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-1977", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999984502816872, "cum_logprob": -0.9812030688773348, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2017", "text": " True.\n\nSynchros can", "first_tok_prob": 0.9994427688200107, "cum_logprob": -0.8058566022954778, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2050", "text": " False. Generation excitation control is not", "first_tok_prob": 0.9879251741065557, "cum_logprob": -1.0914051074419078, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2070", "text": " false", "first_tok_prob": 0.3893750926373911, "cum_logprob": -1.2295045256614685, "n_tokens": 2, "finish": "stop"}
+{"id": "mmlu_tf-2075", "text": " True. The proposed answer is a close", "first_tok_prob": 0.9917137377124228, "cum_logprob": -2.652905294453376, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2086", "text": " True. The actual number of runners", "first_tok_prob": 0.9958639263275616, "cum_logprob": -1.3369556582833582, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2112", "text": " False. The correct answer is 2", "first_tok_prob": 0.9847909657781416, "cum_logprob": -0.5696892967680469, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2119", "text": " False.\n\nThe correct step to", "first_tok_prob": 0.996638312265234, "cum_logprob": -0.8753795472803176, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2122", "text": " False. The correct number sentence to find", "first_tok_prob": 0.9999580400908106, "cum_logprob": -0.5182363164567505, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2135", "text": " True.\n\nTo calculate the total", "first_tok_prob": 0.9221954501712936, "cum_logprob": -2.0505942357303866, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2152", "text": " True. The supplement of a ", "first_tok_prob": 0.9972665133396821, "cum_logprob": -0.5087285602057818, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2172", "text": " True. The proposed answer correctly identifies", "first_tok_prob": 0.9999662649076229, "cum_logprob": -1.0600596555013837, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2173", "text": " False. The correct expression to find the", "first_tok_prob": 0.9970174841108296, "cum_logprob": -0.6731440787116298, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2184", "text": " True. The proposed answer \"cyl", "first_tok_prob": 0.9998400467184467, "cum_logprob": -0.9443650710263398, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2186", "text": " False. The value of the digit ", "first_tok_prob": 0.7754442015113518, "cum_logprob": -0.48405614275543485, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2193", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9987990990056654, "cum_logprob": -1.6161587489623344, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2198", "text": " True.\n\nThe total length of", "first_tok_prob": 0.9998779445874486, "cum_logprob": -2.4858253184938803, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2200", "text": " False. The proposed answer is incorrect because", "first_tok_prob": 0.9875423058207417, "cum_logprob": -2.893648340017535, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2220", "text": " True.\n\nIf there are ", "first_tok_prob": 0.9998290830968655, "cum_logprob": -1.7835749199803104, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2229", "text": " False. The proposed answer is not correct", "first_tok_prob": 0.9994565818665491, "cum_logprob": -2.227663410380046, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2248", "text": " True.\n\nTo determine if the", "first_tok_prob": 0.9996430955916169, "cum_logprob": -2.1871286188979866, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2261", "text": " True. The best estimate for the weight", "first_tok_prob": 0.8173600659186926, "cum_logprob": -3.005269827426673, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2264", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9765055004919172, "cum_logprob": -1.2956976016259887, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2279", "text": " True.", "first_tok_prob": 0.9475429331593094, "cum_logprob": -0.9785578995588367, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-2320", "text": " False. The correct discounted price", "first_tok_prob": 0.9999896288992495, "cum_logprob": -1.8205429342970092, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2321", "text": " False. The correct number sentence should be", "first_tok_prob": 0.9999864103261001, "cum_logprob": -1.4426233299318483, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2324", "text": " False. The expression (2x4", "first_tok_prob": 0.8487391850580498, "cum_logprob": -1.3131100937398514, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2367", "text": " True.", "first_tok_prob": 0.9996668018793521, "cum_logprob": -0.4446011224990798, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-2372", "text": " True. The proposed answer is correct.", "first_tok_prob": 0.9522935290356311, "cum_logprob": -2.5438178231124766, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2382", "text": " True.\nThe total number of lit", "first_tok_prob": 0.9996959895397866, "cum_logprob": -0.5623109604416641, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2389", "text": " False. While all parallelogram", "first_tok_prob": 0.999993205116773, "cum_logprob": -0.8540767989781557, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2392", "text": " False. To find the fraction of the", "first_tok_prob": 0.9994180015480927, "cum_logprob": -1.4361480584393576, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2442", "text": " False. To find the number of boats", "first_tok_prob": 0.9999097667136142, "cum_logprob": -0.8139932741855702, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2488", "text": " False. The correct translation should express a", "first_tok_prob": 0.9999213280559782, "cum_logprob": -1.9309418449920486, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2499", "text": " True.\n\nHere's the", "first_tok_prob": 0.9998100164859848, "cum_logprob": -0.07947006210997642, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2538", "text": " True.\n\nHere's the", "first_tok_prob": 0.9998785404885726, "cum_logprob": -0.7077605393278645, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2549", "text": " False. The correct translation into predicate logic", "first_tok_prob": 0.9965271384972177, "cum_logprob": -1.273438759780447, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2556", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.999829321431075, "cum_logprob": -1.1038168907230101, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2578", "text": " False. As of 201", "first_tok_prob": 0.6791344711235661, "cum_logprob": -0.6837838975161503, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2602", "text": " False.\n\nThe actual increase in", "first_tok_prob": 0.9984611149002162, "cum_logprob": -2.0449225725606084, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2623", "text": " False. The percentage of people in Russia", "first_tok_prob": 0.9999871255623688, "cum_logprob": -3.133308474124533, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2671", "text": " False.\n\nThe energy given up", "first_tok_prob": 0.9999564905017542, "cum_logprob": -0.7068784644216066, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2685", "text": " False. Phospholipids are", "first_tok_prob": 0.9999895096921129, "cum_logprob": -0.6406323773289557, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2730", "text": " True. Crossover, or", "first_tok_prob": 0.9999823573372132, "cum_logprob": -2.079128047244005, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2780", "text": " True. If the pedigree indicates that", "first_tok_prob": 0.9706686768057763, "cum_logprob": -2.5110026756156003, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2806", "text": " True.\n\nFermentation", "first_tok_prob": 0.9998737733040751, "cum_logprob": -0.8599500273253327, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2822", "text": " False. The proposed answer does not directly", "first_tok_prob": 0.7772942836483352, "cum_logprob": -2.3290201308182077, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2940", "text": " False. The proposed answer describes a comm", "first_tok_prob": 0.9706594668398957, "cum_logprob": -1.306642103350896, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2958", "text": " True. The primary purpose of ferment", "first_tok_prob": 0.9994208592229767, "cum_logprob": -1.2177326810181057, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2972", "text": " True.\n\nThe proposed answer correctly", "first_tok_prob": 0.9999935627400018, "cum_logprob": -0.7868298375115046, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2984", "text": " True.\n\nTo find the partial", "first_tok_prob": 0.8803659207558759, "cum_logprob": -0.6700819550687811, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-2999", "text": " False. The proposed answer is incorrect because", "first_tok_prob": 0.999723868333497, "cum_logprob": -1.989693126983184, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3038", "text": " True.\n\nTo verify the proposed", "first_tok_prob": 0.9395735990560942, "cum_logprob": -2.5470118485390856, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3072", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9988290685399853, "cum_logprob": -1.3356568836316, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3113", "text": " False. While it's true that", "first_tok_prob": 0.9999281219647156, "cum_logprob": -2.360426211183949, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3128", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.999997854237364, "cum_logprob": -1.8593968039143647, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3149", "text": " False.\n\nTo determine the correct", "first_tok_prob": 0.8153321831235452, "cum_logprob": -1.7050950836237462, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3156", "text": " True.\n\nWhen a solid mel", "first_tok_prob": 0.9706602515096728, "cum_logprob": -0.31031026851269417, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3174", "text": " False.\n\nTo find the number", "first_tok_prob": 0.9999458819130859, "cum_logprob": -1.48725386201113, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3212", "text": " True.\n\nIn a 3", "first_tok_prob": 0.9998535132381372, "cum_logprob": -1.341506270538389, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3237", "text": " True. The proposed answer is correct.", "first_tok_prob": 0.9999469546810004, "cum_logprob": -0.8580290820573211, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3277", "text": " True.\n\nThe proposed answer correctly", "first_tok_prob": 0.8806502046327223, "cum_logprob": -1.1359629178195974, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3291", "text": " False. The passage provides evidence for the", "first_tok_prob": 0.957782306950796, "cum_logprob": -1.6426947611616924, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3366", "text": " True.\n\nThe long evenings", "first_tok_prob": 0.9606826635080907, "cum_logprob": -0.687232871915171, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3369", "text": " True.", "first_tok_prob": 0.999940398906774, "cum_logprob": -0.5028178972133901, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-3375", "text": " True.", "first_tok_prob": 0.9981823878549605, "cum_logprob": -0.32380075566470623, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-3406", "text": " True.\n\nThe passage from the", "first_tok_prob": 0.9852122001473991, "cum_logprob": -2.8369746671522194, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3416", "text": " True.\n\nThe ideas expressed by", "first_tok_prob": 0.6924554798344041, "cum_logprob": -1.281546164304018, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3462", "text": " False.\n\nIslam did", "first_tok_prob": 0.9999216856339493, "cum_logprob": -2.1799106687576284, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3464", "text": " True. The star-shaped city", "first_tok_prob": 0.9999914170043662, "cum_logprob": -1.6500998762601853, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3487", "text": " False. The proposed answer is not entirely", "first_tok_prob": 0.9999504113947393, "cum_logprob": -1.8901872756814555, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3528", "text": " True.\n\nThe end of the", "first_tok_prob": 0.9999953508594287, "cum_logprob": -0.4972896704093728, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3550", "text": " True. Health care is indeed a major", "first_tok_prob": 0.9999982118638471, "cum_logprob": -0.40949472901252193, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3558", "text": " False.\n\nThe European Union (", "first_tok_prob": 0.9999632848858607, "cum_logprob": -0.968637288427999, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3562", "text": " True. The proposed answer correctly identifies", "first_tok_prob": 0.993306442803073, "cum_logprob": -1.3912345515855122, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3615", "text": " False. The idea that you identify with", "first_tok_prob": 0.9971812770969297, "cum_logprob": -1.319238081770436, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3620", "text": " True.\n\nQuebec is often", "first_tok_prob": 0.9989295747052531, "cum_logprob": -2.0149487629462897, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3643", "text": " True. Hindu and Buddhist relig", "first_tok_prob": 0.9999883176260755, "cum_logprob": -1.6202407124046658, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3653", "text": " False. Voters who rely exclus", "first_tok_prob": 0.9947648189424608, "cum_logprob": -0.4546277937904506, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3802", "text": " False. The majority of Supreme Court just", "first_tok_prob": 0.9999819997211749, "cum_logprob": -0.22870862987655727, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3816", "text": " True.\n\nThe proposed answer correctly", "first_tok_prob": 0.9999880792130387, "cum_logprob": -1.0444423020073828, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3829", "text": " False. Divided government typically refers to", "first_tok_prob": 0.9997901165013245, "cum_logprob": -1.6211625660630489, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3853", "text": " False.\n\nTo determine the correct", "first_tok_prob": 0.7310512797663615, "cum_logprob": -2.201414601865963, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3879", "text": " False.\n\nWhile historically", "first_tok_prob": 0.9999895096921129, "cum_logprob": -1.6319558310678985, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3885", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.9999979734461775, "cum_logprob": -0.7573652732078244, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3946", "text": " True.\n\nTo calculate the total", "first_tok_prob": 0.9968192743384129, "cum_logprob": -1.8739654191272166, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-3977", "text": " True.\n\nInvestors,", "first_tok_prob": 0.9997152900864609, "cum_logprob": -1.4281586559500283, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4052", "text": " True. Generally, due to infl", "first_tok_prob": 0.9982952381593245, "cum_logprob": -0.8758155785367308, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4071", "text": " False. The 30-year", "first_tok_prob": 0.9988277602857291, "cum_logprob": -1.2802833241703269, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4105", "text": " False. GDP is calculated quarterly", "first_tok_prob": 0.9997550849126202, "cum_logprob": -1.165349993789249, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4139", "text": " True.\n\nThe proposed answer correctly", "first_tok_prob": 0.9999920130413283, "cum_logprob": -1.1788318882395288, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4181", "text": " True.\n\nAn increase in the", "first_tok_prob": 0.9992902551383588, "cum_logprob": -1.088547831033786, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4183", "text": " False.\n\nIf interest rates rise", "first_tok_prob": 0.9999995231630692, "cum_logprob": -1.3387547323098943, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4203", "text": " True. According to Monetarist", "first_tok_prob": 0.9999953508594287, "cum_logprob": -0.44981597373811155, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4222", "text": " True.\n\nHowever, it'", "first_tok_prob": 0.7920269067205558, "cum_logprob": -1.7473905160513752, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4264", "text": " Here's my analysis:\n\n", "first_tok_prob": 0.7718281499569328, "cum_logprob": -0.9813836893881671, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4267", "text": " here, we can use the property of", "first_tok_prob": 0.5714043878224231, "cum_logprob": -3.19430573284626, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4289", "text": " False.\n\nThe correct answer is", "first_tok_prob": 0.3146834672740027, "cum_logprob": -2.9084218233920183, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4322", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.7756791737515659, "cum_logprob": -1.7992894893104676, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4446", "text": " False.\n\nThe correct answer is", "first_tok_prob": 0.9856490821535394, "cum_logprob": -1.6042419646296366, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4475", "text": " False.\n\nTo determine the number", "first_tok_prob": 0.6236217454820535, "cum_logprob": -1.1003598872321163, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4483", "text": " Here is why the proposed answer is true", "first_tok_prob": 0.8836685365518819, "cum_logprob": -1.0263326743170182, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4510", "text": " True.\n\nExpectations of", "first_tok_prob": 0.9998388550060853, "cum_logprob": -0.4210404217082555, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4574", "text": " True.\n\nIn monopolistic", "first_tok_prob": 0.8173848274492108, "cum_logprob": -1.1505394386331247, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4621", "text": " False.\n\nA price ceiling", "first_tok_prob": 0.998473712423538, "cum_logprob": -1.2281630465798798, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4622", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.880791954437331, "cum_logprob": -1.322126873067191, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4679", "text": " True.\n\nThe immobility", "first_tok_prob": 0.8807357294906878, "cum_logprob": -1.4298576542819177, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4695", "text": " False. The cost of purchasing can", "first_tok_prob": 0.9999952316511552, "cum_logprob": -0.4771336146772853, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4697", "text": " True.\n\nA monopoly", "first_tok_prob": 0.9999762779146959, "cum_logprob": -0.07454009693736907, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4709", "text": " True.\n\nWhen opportunity cost is", "first_tok_prob": 0.9997450763371897, "cum_logprob": -0.5606558295776267, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4710", "text": " True.\n\nThe demand curve for", "first_tok_prob": 0.9999948740268748, "cum_logprob": -0.6698188063978137, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4728", "text": " False.\n\n\nThe proposed answer", "first_tok_prob": 0.9887389989000988, "cum_logprob": -2.2686003744009895, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4730", "text": " True.\n\nIn the long run", "first_tok_prob": 0.9999053567850382, "cum_logprob": -0.614393947311271, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4747", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.8807878857516321, "cum_logprob": -1.099392004962283, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4760", "text": " False. The electric field strength at the", "first_tok_prob": 0.9999935627400018, "cum_logprob": -0.5726365415184773, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4767", "text": " False. The proposed answer is not correct", "first_tok_prob": 0.9999884368330701, "cum_logprob": -2.8730634833682416, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4815", "text": " True.\n\nTo verify the proposed", "first_tok_prob": 0.9972899884500175, "cum_logprob": -1.4462413059081314, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4867", "text": " True.\n\nTo find the stone", "first_tok_prob": 0.8510933940087247, "cum_logprob": -2.2046941658554715, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4874", "text": " False. The electric field strength due to", "first_tok_prob": 0.9998755609865043, "cum_logprob": -1.3931237965020955, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4929", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.999979138810205, "cum_logprob": -0.555099237211607, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4943", "text": " True. The proposed answer correctly highlights", "first_tok_prob": 0.9945534716029729, "cum_logprob": -2.243361460572487, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4974", "text": " True. Apes using words to express", "first_tok_prob": 0.9999994039539004, "cum_logprob": -1.594669404876015, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-4975", "text": " True.\n\nTo determine the median", "first_tok_prob": 0.8175569852773769, "cum_logprob": -3.0587590078357607, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5104", "text": " False. The correct order is tympan", "first_tok_prob": 0.9999877215940446, "cum_logprob": -1.1902830898006869, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5115", "text": " True. The proposed answer is a simplified", "first_tok_prob": 0.9999974966112362, "cum_logprob": -3.1814499778179197, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5125", "text": " True.", "first_tok_prob": 0.9999819997211749, "cum_logprob": -0.39342277216019284, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-5134", "text": " True.", "first_tok_prob": 0.9999487426325072, "cum_logprob": -0.7074607029462641, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-5182", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.6791581318437461, "cum_logprob": -1.7912549594220764, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5202", "text": " False. The proposed answer is not entirely", "first_tok_prob": 0.9999525569523512, "cum_logprob": -1.7142270358217502, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5237", "text": " True. A double-blind study", "first_tok_prob": 0.9999946356109105, "cum_logprob": -0.5342361546501593, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5247", "text": " True. The proposed answer correctly identifies", "first_tok_prob": 0.9998550625148414, "cum_logprob": -1.8929945568670234, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5286", "text": " False. The proposed answer \"foot-", "first_tok_prob": 0.8514190611533862, "cum_logprob": -1.1633276220582047, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5314", "text": " True. Acetylcholine is", "first_tok_prob": 0.9999513649749275, "cum_logprob": -0.5407952315647435, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5343", "text": " True. The proposed answer correctly exemplifies", "first_tok_prob": 0.999995112442896, "cum_logprob": -0.5736091757306667, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5538", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999759203026506, "cum_logprob": -1.0265716813454446, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5556", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9038653472408179, "cum_logprob": -2.190155587551999, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5583", "text": " False. This scenario is an example of", "first_tok_prob": 0.9398469822224357, "cum_logprob": -2.3136766716888815, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5590", "text": " False. The provided information is not sufficient", "first_tok_prob": 0.9397793869300061, "cum_logprob": -2.0979260053136386, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5607", "text": " False. To find the range of customers", "first_tok_prob": 0.9525397515660068, "cum_logprob": -0.4752138950855098, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5657", "text": " False. The proposed answer refers to the", "first_tok_prob": 0.6442640050943608, "cum_logprob": -1.9793387131358031, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5659", "text": " True.\n\nThe proposed answer capt", "first_tok_prob": 0.8337528141663171, "cum_logprob": -1.8448874445166439, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5675", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9240830680933987, "cum_logprob": -1.2267619894232666, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5704", "text": " True.", "first_tok_prob": 0.9949553679501173, "cum_logprob": -0.7494132274296135, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-5723", "text": " False. The proposed answer does not represent", "first_tok_prob": 0.9875388182469809, "cum_logprob": -0.44949364806643644, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5763", "text": " True.", "first_tok_prob": 0.9691900084371946, "cum_logprob": -0.4011855348944664, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-5764", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9983104451352479, "cum_logprob": -1.2690362014127459, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5781", "text": " No. John Taylor of Caroline is best", "first_tok_prob": 0.8796036871190522, "cum_logprob": -1.177747822875972, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5806", "text": " partially correct\n\nThe proposed answer does", "first_tok_prob": 0.5783000099763644, "cum_logprob": -2.3041433803641667, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5813", "text": " true", "first_tok_prob": 0.8774867131455134, "cum_logprob": -0.36445945501327515, "n_tokens": 2, "finish": "stop"}
+{"id": "mmlu_tf-5847", "text": " true.", "first_tok_prob": 0.49994814569577306, "cum_logprob": -1.0746598094701767, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-5873", "text": " No.\n\nThe proposed answer,", "first_tok_prob": 0.99446162471624, "cum_logprob": -1.3966433577000998, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5874", "text": " No.\n\nThe author of Source", "first_tok_prob": 0.5914039585233085, "cum_logprob": -0.777403834996619, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5897", "text": " True.", "first_tok_prob": 0.9980595881762466, "cum_logprob": -0.693065814091824, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-5926", "text": " True\n\n- ai: True.", "first_tok_prob": 0.9938917055519289, "cum_logprob": -4.063965394419938, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5949", "text": " True.", "first_tok_prob": 0.9968218802491616, "cum_logprob": -0.501176210353151, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-5981", "text": " False\n\nThe passage is best understood", "first_tok_prob": 0.9464779976725942, "cum_logprob": -0.923104724206496, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5984", "text": " True.\n\nThe proposed answer capt", "first_tok_prob": 0.9562901732247205, "cum_logprob": -1.8822609655353517, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-5993", "text": " False. Rodney's argument is", "first_tok_prob": 0.884482311991291, "cum_logprob": -0.8666125243469764, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6025", "text": " True.", "first_tok_prob": 0.9998344457103422, "cum_logprob": -0.1954465520393569, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-6047", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.998845837974096, "cum_logprob": -1.1677511206521558, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6167", "text": " False. The proposed answer does not directly", "first_tok_prob": 0.9975105663030981, "cum_logprob": -0.959219551179558, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6171", "text": " False. The percentage of older adults", "first_tok_prob": 0.9027825920909722, "cum_logprob": -1.8700662170010105, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6176", "text": " True. High levels of social support are", "first_tok_prob": 0.999998927117538, "cum_logprob": -0.8654871058671958, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6178", "text": " True. Middle-aged adults are", "first_tok_prob": 0.9999767547297425, "cum_logprob": -1.1993102196474297, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6189", "text": " False. The proposed answer is not entirely", "first_tok_prob": 0.9626559489212807, "cum_logprob": -2.8010484941756886, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6190", "text": " False. The term \"grieving\"", "first_tok_prob": 0.9994245504832995, "cum_logprob": -1.347266745462548, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6206", "text": " False. The different components of memory (", "first_tok_prob": 0.998938377369174, "cum_logprob": -1.4275033077374246, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6238", "text": " False. The more frequent stereot", "first_tok_prob": 0.9994842091723022, "cum_logprob": -0.5966749066137638, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6247", "text": " True.\n\n\nThe proposed answer", "first_tok_prob": 0.9914121663796301, "cum_logprob": -1.6144939655350683, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6271", "text": " False. Senescence refers to the", "first_tok_prob": 0.9999483850412226, "cum_logprob": -0.6068803824125553, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6296", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999855758836753, "cum_logprob": -1.110254163659647, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6353", "text": " True.\n\nHowever, it'", "first_tok_prob": 0.9999501729989247, "cum_logprob": -2.0730790116966773, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6383", "text": " True. Consuming alcohol can decrease", "first_tok_prob": 0.9764775373814645, "cum_logprob": -2.9049918362870812, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6469", "text": " True.\n\n\nThe International Court", "first_tok_prob": 0.9999717481958249, "cum_logprob": -0.6997034641885875, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6471", "text": " True.\n\n\nUnder international law", "first_tok_prob": 0.9999855758836753, "cum_logprob": -1.0203384307806118, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6489", "text": " False. The structure of the international society", "first_tok_prob": 0.9999667417142571, "cum_logprob": -0.12999233352070405, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6491", "text": " False.\n\nThe contiguous", "first_tok_prob": 0.9999922514562126, "cum_logprob": -1.2131083138218628, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6518", "text": " True.\n\nThe proposed answer correctly", "first_tok_prob": 0.9999948740268748, "cum_logprob": -0.6376594050065876, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6578", "text": " False.\n\nThe proposed answer simpl", "first_tok_prob": 0.8564025808752661, "cum_logprob": -2.2962943057136656, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6642", "text": " True.\n\nThe judicial branch", "first_tok_prob": 0.9998227672100933, "cum_logprob": -0.5647170057854964, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6673", "text": " True. The proposed answer correctly describes the", "first_tok_prob": 0.999997854237364, "cum_logprob": -0.8094293291110262, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6680", "text": " True. The proposed answer correctly describes an", "first_tok_prob": 0.9999805692637573, "cum_logprob": -0.8959067680834778, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6681", "text": " False. The fallacy described is", "first_tok_prob": 0.96247569247595, "cum_logprob": -1.5987534968879231, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6692", "text": " True. The fallacy of appeal", "first_tok_prob": 0.999994397195003, "cum_logprob": -0.9420350421262356, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6705", "text": " True.", "first_tok_prob": 0.9999661457096376, "cum_logprob": -0.3268997721679625, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-6730", "text": " True.\n\nThe fallacy", "first_tok_prob": 0.9995631696432455, "cum_logprob": -1.0740957384350622, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6772", "text": " True. The proposed answer correctly identifies", "first_tok_prob": 0.9982726659621708, "cum_logprob": -1.187786778681577, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6809", "text": " True. \"Ad lazarum\"", "first_tok_prob": 0.9867420558969396, "cum_logprob": -0.8563993211719207, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6818", "text": " True. The proposed answer is correct.", "first_tok_prob": 0.9999616160839557, "cum_logprob": -2.1932975752451966, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6820", "text": " True.\n\nThe straw person", "first_tok_prob": 0.731034787173779, "cum_logprob": -1.7329674006905336, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6823", "text": " True.\n\nThe proposed answer correctly", "first_tok_prob": 0.999284065094742, "cum_logprob": -1.0292291846698092, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6836", "text": " True.\n\nExplanation:", "first_tok_prob": 0.9046500273538134, "cum_logprob": -0.5138093638040502, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6838", "text": " True.\n\nThe maximum number of", "first_tok_prob": 0.9706384635991231, "cum_logprob": -1.7812076554930627, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6854", "text": " True.\n\nExplanation:", "first_tok_prob": 0.9999227583468039, "cum_logprob": -0.42510288954849784, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6885", "text": " False.\n\nThe classification time complexity", "first_tok_prob": 0.9996612028163965, "cum_logprob": -1.903346841869734, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6942", "text": " True.", "first_tok_prob": 0.9999393261531683, "cum_logprob": -0.31478616606182186, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-6952", "text": " False. A Gantt chart is", "first_tok_prob": 0.9999614968828868, "cum_logprob": -0.06318839287175138, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6965", "text": " False. According to Belbin's", "first_tok_prob": 0.9995548323675159, "cum_logprob": -1.2892010058533288, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6983", "text": " True.\n\n\nThe purpose of", "first_tok_prob": 0.8807593136076255, "cum_logprob": -1.2938074655828515, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-6995", "text": " True. A programmed decision typically involves", "first_tok_prob": 0.999969006545237, "cum_logprob": -1.0248708077260744, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7044", "text": " True. Retaining the status quo", "first_tok_prob": 0.9999064294658246, "cum_logprob": -0.28786448304722967, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7054", "text": " False. The proposed answer is incorrect because", "first_tok_prob": 0.9974909949332864, "cum_logprob": -1.3559135004361451, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7062", "text": " False. The scenario described is more accur", "first_tok_prob": 0.9046415415221758, "cum_logprob": -2.362063951744858, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7098", "text": " True.\n\nThe proposed answer \"", "first_tok_prob": 0.9999284795451163, "cum_logprob": -1.1160113777950755, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7106", "text": " True. Field marketing is indeed a", "first_tok_prob": 0.9998805665550504, "cum_logprob": -1.250915391545277, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7110", "text": " False. The stage where we learn something", "first_tok_prob": 0.999998927117538, "cum_logprob": -0.6619438822020811, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7123", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9046203711009804, "cum_logprob": -1.50988256643177, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7144", "text": " False. The element of the promot", "first_tok_prob": 0.9999784235841962, "cum_logprob": -0.7477656316259527, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7150", "text": " False. The correct term for the described", "first_tok_prob": 0.9999437363807097, "cum_logprob": -1.7331366470352805, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7183", "text": " True.\n\nThe size of the", "first_tok_prob": 0.9968180897513829, "cum_logprob": -0.4187074975777705, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7184", "text": " True.", "first_tok_prob": 0.9999892712787918, "cum_logprob": -0.18421701443821803, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-7205", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999916554191085, "cum_logprob": -1.0409604346295964, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7218", "text": " True.\n\nImpulsive bu", "first_tok_prob": 0.9999885560391694, "cum_logprob": -0.49586567563574135, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7233", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9956629841379233, "cum_logprob": -1.4990708263030683, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7259", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9889885729812443, "cum_logprob": -1.3526533634067093, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7334", "text": " False. Male to male transmission is not", "first_tok_prob": 0.9999967813595916, "cum_logprob": -1.4695230104209713, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7346", "text": " True.\n\nTo calculate the probability", "first_tok_prob": 0.49998176035906416, "cum_logprob": -2.071769405149098, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7495", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.999958755287689, "cum_logprob": -1.3969624133133038, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7563", "text": " False. Green pepper is not a", "first_tok_prob": 0.9996535786542139, "cum_logprob": -1.4420380697702058, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7574", "text": " False. Adolph Eichmann was", "first_tok_prob": 0.9968192743384129, "cum_logprob": -0.24635391023389275, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7578", "text": " True.\n\nSelecting texts based", "first_tok_prob": 0.9999988079084972, "cum_logprob": -2.3935731587255304, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7590", "text": " True. In equestrian terms,", "first_tok_prob": 0.9998993974844581, "cum_logprob": -2.6951780926608535, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7603", "text": " True. Rhea was the mother", "first_tok_prob": 0.9999897481064004, "cum_logprob": -0.8323892365532402, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7615", "text": " True. Robin Quivers is indeed Howard", "first_tok_prob": 0.9997247023647791, "cum_logprob": -1.7984154944131205, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7616", "text": " False. Israel became an independent state in", "first_tok_prob": 0.9958554145029117, "cum_logprob": -0.15222138875469682, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7643", "text": " True.\n\nRadiation is actually", "first_tok_prob": 0.9994393156027488, "cum_logprob": -0.9509885642903555, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7647", "text": " True. Pikes Peak is not", "first_tok_prob": 0.9998246738733153, "cum_logprob": -1.1187733349651694, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7648", "text": " True. Joan Baez did found", "first_tok_prob": 0.9998731774057923, "cum_logprob": -1.5764848646063, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7690", "text": " True.\n\nModerate and", "first_tok_prob": 0.9997909506169727, "cum_logprob": -0.9557397757753279, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7692", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999847414437658, "cum_logprob": -1.0621335908654146, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7754", "text": " True.\n\nThe emblem on", "first_tok_prob": 0.9983394348992215, "cum_logprob": -1.1279347639065236, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7793", "text": " False. The main ingredient in", "first_tok_prob": 0.9999406372966204, "cum_logprob": -0.015279295724667463, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7797", "text": " False.\n\nAnimals with back", "first_tok_prob": 0.9999417100552707, "cum_logprob": -2.937860789406841, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7822", "text": " True.\n\nThe term \"her", "first_tok_prob": 0.9999756818971167, "cum_logprob": -1.5504787149202457, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7871", "text": " True. The description of multiple ministers", "first_tok_prob": 0.999098994280071, "cum_logprob": -3.621904257177448, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7874", "text": " True.\n\nThe official language of", "first_tok_prob": 0.9999843838268748, "cum_logprob": -0.6200820202157047, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7898", "text": " True. The proposed answer correctly captures", "first_tok_prob": 0.9997298255404862, "cum_logprob": -2.6810967704059294, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7903", "text": " False. Vitamin K was the first", "first_tok_prob": 0.9999233543037372, "cum_logprob": -1.1285871680665878, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7911", "text": " False\n\nSteve Woznia", "first_tok_prob": 0.9998558967428726, "cum_logprob": -1.1276002981175282, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7940", "text": " True.\n\nThe kangar", "first_tok_prob": 0.9999033306101257, "cum_logprob": -1.5281522171403594, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7942", "text": " True. The majority of calcium in", "first_tok_prob": 0.9999907017622996, "cum_logprob": -0.16913133949855563, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7974", "text": " True. The proposed answer is consistent with", "first_tok_prob": 0.9947237689258993, "cum_logprob": -2.5345138495322317, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7977", "text": " False. When Amazon.com first appeared", "first_tok_prob": 0.9994389584081604, "cum_logprob": -1.2318475852925985, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-7992", "text": " True. Gesture drawing often focuses", "first_tok_prob": 0.9770136576647923, "cum_logprob": -1.6662011681182776, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-8006", "text": " False. There are typically 24", "first_tok_prob": 0.9980714630388261, "cum_logprob": -0.9981949179152423, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-8012", "text": " True.\n\nColumbus set", "first_tok_prob": 0.9999803308534772, "cum_logprob": -1.4906476175308399, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-8038", "text": " False. A mid-oceanic", "first_tok_prob": 0.9999963045256735, "cum_logprob": -0.7185760987667322, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-8081", "text": " True. In the original \"Get Sm", "first_tok_prob": 0.9768012538496386, "cum_logprob": -0.588369279460494, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-8118", "text": " False.\n\n\nThe ISO speed", "first_tok_prob": 0.9998358757532201, "cum_logprob": -2.8984656374950646, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-8126", "text": " True.\n\nA \"wah", "first_tok_prob": 0.9999872447683118, "cum_logprob": -0.8555099455615789, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9420", "text": " True.\n\nWomen indeed play", "first_tok_prob": 0.99998879445232, "cum_logprob": -1.1380995671161145, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9432", "text": " True.\n\n\nAs people age", "first_tok_prob": 0.9914085340275781, "cum_logprob": -2.3895041661453433, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9455", "text": " False.\n\nThe vitamin that", "first_tok_prob": 0.9999409948851344, "cum_logprob": -1.5235984706720274, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9470", "text": " False. Without the given options, it", "first_tok_prob": 0.999985933501902, "cum_logprob": -2.4690587840914304, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9506", "text": " True.\n\n\nVegans", "first_tok_prob": 0.9933036198988744, "cum_logprob": -1.6030000662788098, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9523", "text": " True.\n\n\nPoor mus", "first_tok_prob": 0.9999730594272631, "cum_logprob": -0.6003831659145362, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9526", "text": " True.\n\nThe complete oxid", "first_tok_prob": 0.9999612584807916, "cum_logprob": -0.2917249663223629, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9555", "text": " False.\n\nCholesterol", "first_tok_prob": 0.9999804500586101, "cum_logprob": -0.6887733706781773, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9571", "text": " True.\n\nGalactose", "first_tok_prob": 0.5620926374729116, "cum_logprob": -1.4601273940160127, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9582", "text": " True.\n\n\nThe number of", "first_tok_prob": 0.9770209406505973, "cum_logprob": -1.7578622356843425, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9590", "text": " True.\n\n\nThe proposed answer", "first_tok_prob": 0.49788711036835653, "cum_logprob": -1.3093610787763055, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9604", "text": " True. A diet that is high", "first_tok_prob": 0.9999929667012066, "cum_logprob": -1.774496152899701, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9630", "text": " False. While young adults do require", "first_tok_prob": 0.9999313401638235, "cum_logprob": -2.28251786645842, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9675", "text": " True.\n\n\nBrassica", "first_tok_prob": 0.9999860527077029, "cum_logprob": -1.5436036415590024, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9719", "text": " True.\n\nThe answer provided align", "first_tok_prob": 0.9999958276922101, "cum_logprob": -4.05909269770774, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9750", "text": " True.\n\nAccording to John", "first_tok_prob": 0.6221456789166085, "cum_logprob": -0.8247086368501044, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9786", "text": " False.\n\nEpicurus actually", "first_tok_prob": 0.9999133423558813, "cum_logprob": -1.2319294469307351, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9809", "text": " False. According to Hobbes, whenever", "first_tok_prob": 0.9992020541844618, "cum_logprob": -0.8256195200901786, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9810", "text": " False. Hare's claim is", "first_tok_prob": 0.9984930846600703, "cum_logprob": -2.1290088827947784, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9816", "text": " True.\n\nThe proposed answer capt", "first_tok_prob": 0.9999732978321718, "cum_logprob": -1.200581438296922, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9919", "text": " False. The proposed answer \"fallib", "first_tok_prob": 0.9999616160839557, "cum_logprob": -1.8309545537213125, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9923", "text": " True.\n\nAccording to D", "first_tok_prob": 0.9990986372652669, "cum_logprob": -2.1385530438528235, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9930", "text": " True.\n\nAugustine of Hi", "first_tok_prob": 0.9999935627400018, "cum_logprob": -0.7885966668593483, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9950", "text": " False. The proposed answer does not fully", "first_tok_prob": 0.8175716410144892, "cum_logprob": -3.527220393600146, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9960", "text": " True. Logical behaviorism is the", "first_tok_prob": 0.99846265991261, "cum_logprob": -1.3996467436766125, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9968", "text": " False. Anscombe argues that", "first_tok_prob": 0.9996136727781878, "cum_logprob": -0.5793015536355597, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-9993", "text": " False.\n\nAccording to John", "first_tok_prob": 0.9999446899472569, "cum_logprob": -1.4025872288802645, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10010", "text": " True.\n\nHowever, without the", "first_tok_prob": 0.7855685418237738, "cum_logprob": -2.811973794876394, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10061", "text": " False. Montezuma refers to Mo", "first_tok_prob": 0.9999983310727032, "cum_logprob": -1.9957243260591824, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10064", "text": " False. The proposed answer is not correct", "first_tok_prob": 0.9128381167241028, "cum_logprob": -3.734908652375452, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10066", "text": " True.\n\n\nEthn", "first_tok_prob": 0.9626584879350191, "cum_logprob": -1.4016114157657285, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10098", "text": " True.", "first_tok_prob": 0.9999953508594287, "cum_logprob": -0.41996825974274543, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-10113", "text": " True.\n\n\nThe proposed answer", "first_tok_prob": 0.9999905825550351, "cum_logprob": -1.01454648737581, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10131", "text": " True.\n\nNative navigators of", "first_tok_prob": 0.9975200556607037, "cum_logprob": -0.6718669851893537, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10135", "text": " True.", "first_tok_prob": 0.9959269443808074, "cum_logprob": -0.1794406296685338, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-10140", "text": " True. The Olmec civilization", "first_tok_prob": 0.9990847151249681, "cum_logprob": -1.1090140744259998, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10173", "text": " False. Giovanni de Verrazzano", "first_tok_prob": 0.9999456435183514, "cum_logprob": -0.2037853198859807, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10212", "text": " True.", "first_tok_prob": 0.999993205116773, "cum_logprob": -0.6625604508212746, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-10260", "text": " False. While humans are widely accepted as", "first_tok_prob": 0.9521596035018759, "cum_logprob": -4.583704676479101, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10274", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9914216572779158, "cum_logprob": -1.160290426836582, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10276", "text": " False. The Maya derived their writing", "first_tok_prob": 0.9999079788972756, "cum_logprob": -1.8243167592590908, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10284", "text": " True.\n\nJoseph Tain", "first_tok_prob": 0.970601289139771, "cum_logprob": -0.4075665389117944, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10311", "text": " False.\n\nAustralia did not", "first_tok_prob": 0.9999736554414602, "cum_logprob": -2.067311902304816, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10317", "text": " True. Lucy belongs to the species Austral", "first_tok_prob": 0.9999769931373511, "cum_logprob": -0.9957039969776744, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10329", "text": " False. The proposed answer is incorrect.", "first_tok_prob": 0.9999909401759619, "cum_logprob": -1.7362859855593342, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10337", "text": " False. The dating technique based on", "first_tok_prob": 0.9999939203633587, "cum_logprob": -0.6045231286094577, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10343", "text": " True.\n\n\nThe proposed answer", "first_tok_prob": 0.9999760395072578, "cum_logprob": -1.6970446232479617, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10359", "text": " False. The investment's present", "first_tok_prob": 0.9399062699601342, "cum_logprob": -2.6894128132248625, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10396", "text": " False.\n\nThe recognized gain from", "first_tok_prob": 0.9770223055340375, "cum_logprob": -3.5549415127958355, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10397", "text": " True.\n\nHowever, it'", "first_tok_prob": 0.9999711521845835, "cum_logprob": -3.3263583062617954, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10421", "text": " True.\n\nExplanation:", "first_tok_prob": 0.5621742575149787, "cum_logprob": -1.437117521090613, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10423", "text": " False. The theoretical value of the war", "first_tok_prob": 0.9999809268774651, "cum_logprob": -0.7018580527910672, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10456", "text": " True.\n\nTo calculate the required", "first_tok_prob": 0.6791740208139392, "cum_logprob": -1.6978254095007514, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10477", "text": " False. A company should recognize goodwill", "first_tok_prob": 0.9998668609494783, "cum_logprob": -1.039389006658837, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10551", "text": " True.\n\nThe proposed answer correctly", "first_tok_prob": 0.9999394453479565, "cum_logprob": -1.4627605840441902, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10579", "text": " True.", "first_tok_prob": 0.817530208474453, "cum_logprob": -0.3349254429335815, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-10637", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999979734461775, "cum_logprob": -1.0115006267667113, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10638", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.99806885060806, "cum_logprob": -1.351266484693042, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10645", "text": " True. The proposed answer is likely correct", "first_tok_prob": 0.993903128401258, "cum_logprob": -1.9827145205199486, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10692", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9980730068673203, "cum_logprob": -3.513759890505753, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10709", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9394730056411654, "cum_logprob": -2.08035859422597, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10834", "text": " False. The team captain would likely prev", "first_tok_prob": 0.9999996423722521, "cum_logprob": -1.955156232477691, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10842", "text": " False. The proposed answer is incorrect because", "first_tok_prob": 0.9995064788311774, "cum_logprob": -1.4115906733752581, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10862", "text": " True.\n\nUnder the tort of", "first_tok_prob": 0.9999831917733143, "cum_logprob": -3.573252127125187, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10867", "text": " True. Double jeopardy generally", "first_tok_prob": 0.9998873599103809, "cum_logprob": -0.7662979866096293, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10902", "text": " False. The customer would likely prevail", "first_tok_prob": 0.9939932226789069, "cum_logprob": -1.1992484365910059, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10911", "text": " False. The proposed answer does not consider", "first_tok_prob": 0.9840795485695564, "cum_logprob": -1.1679789945378474, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10951", "text": " True. The proposed answer is correct because", "first_tok_prob": 0.9990719832341165, "cum_logprob": -2.4136059084873978, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10967", "text": " True. The proposed answer is correct,", "first_tok_prob": 0.9999395645427589, "cum_logprob": -1.7533751971059246, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-10971", "text": " True. The court may rule in favor", "first_tok_prob": 0.9997319701774435, "cum_logprob": -2.717902319294808, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11049", "text": " False. The collector should recover the", "first_tok_prob": 0.996822235580056, "cum_logprob": -2.3690793360583413, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11149", "text": " False. The sisters are not necessarily", "first_tok_prob": 0.9994465793045639, "cum_logprob": -1.1855220081541802, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11160", "text": " true.", "first_tok_prob": 0.9781766272211893, "cum_logprob": -0.4420679323375225, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-11168", "text": " True. The builder properly rejected the ship", "first_tok_prob": 0.9399065850883208, "cum_logprob": -0.31485850181115893, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11170", "text": " True. The proposed answer is incorrect because", "first_tok_prob": 0.5621510368140931, "cum_logprob": -2.6804027500265875, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11171", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.9988209813677559, "cum_logprob": -0.3682881531019575, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11195", "text": " True. The Supreme Court is likely to", "first_tok_prob": 0.9980715817858415, "cum_logprob": -1.4435703515441674, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11199", "text": " False. The proposed answer is not entirely", "first_tok_prob": 0.9975236142511427, "cum_logprob": -0.940196118082099, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11210", "text": " True. The proposed answer is correct because", "first_tok_prob": 0.999967456924635, "cum_logprob": -1.3577739628274799, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11228", "text": " False. The proposed answer does not fully", "first_tok_prob": 0.7310570097766348, "cum_logprob": -2.75272276943997, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11246", "text": " True.", "first_tok_prob": 0.9999053567850382, "cum_logprob": -0.23302624671100602, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-11304", "text": " True.\n\nUnder a pure race", "first_tok_prob": 0.9914221254080451, "cum_logprob": -0.057260708783360315, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11390", "text": " True. The proposed answer is correct,", "first_tok_prob": 0.9980721755211308, "cum_logprob": -2.314973108047525, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11411", "text": " True. The boy committed larceny", "first_tok_prob": 0.9998184772020393, "cum_logprob": -0.16038744519028114, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11502", "text": " True. The proposed answer highlights the", "first_tok_prob": 0.9979211481988249, "cum_logprob": -1.585170387130347, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11568", "text": " False. The most helpful fact for the", "first_tok_prob": 0.9997310169919629, "cum_logprob": -1.3188765613886062, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11613", "text": " False. The proposed answer does not directly", "first_tok_prob": 0.8895907816892497, "cum_logprob": -0.9573386530365156, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11634", "text": " False. The proposed answer is not entirely", "first_tok_prob": 0.9482000207408995, "cum_logprob": -0.817976175451804, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11635", "text": " True. The teacher's best argument", "first_tok_prob": 0.999853036543692, "cum_logprob": -0.42178995386206, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11636", "text": " True. The proposed answer is correct,", "first_tok_prob": 0.976682408365798, "cum_logprob": -2.3089218926179456, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11660", "text": " True.\n\nHowever, the court", "first_tok_prob": 0.9999779467683537, "cum_logprob": -3.3953245428712933, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11665", "text": " False. The proposed answer is not the", "first_tok_prob": 0.9059945431688411, "cum_logprob": -1.1860304521781018, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11666", "text": " False. The proposed answer is not necessarily", "first_tok_prob": 0.9943775746666943, "cum_logprob": -1.926665055099818, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11671", "text": " True.\n\nExplanation:", "first_tok_prob": 0.880795931267645, "cum_logprob": -1.295952030551689, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11689", "text": " True.\n\nThe U.S", "first_tok_prob": 0.9999538681349789, "cum_logprob": -1.3054435573030219, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11691", "text": " True.", "first_tok_prob": 0.9987422570104213, "cum_logprob": -0.6529819679853972, "n_tokens": 3, "finish": "stop"}
+{"id": "mmlu_tf-11741", "text": " True. The proposed answer is correct.", "first_tok_prob": 0.9999994039539004, "cum_logprob": -1.9477120495824352, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11757", "text": " True. The retiree is likely", "first_tok_prob": 0.9988296631910064, "cum_logprob": -2.7582790454002293, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11772", "text": " False. The proposed answer does not address", "first_tok_prob": 0.9579032703696241, "cum_logprob": -0.6202526796662369, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11818", "text": " True. The defendant's actions", "first_tok_prob": 0.9999976158197796, "cum_logprob": -1.1945566216281662, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11819", "text": " True.\n\nThe subcontractor", "first_tok_prob": 0.999917156409734, "cum_logprob": -1.6198098772962908, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11931", "text": " False. The husband should be found guilty", "first_tok_prob": 0.816283221077793, "cum_logprob": -1.2364003303027786, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11932", "text": " True. However, the maximum amount of", "first_tok_prob": 0.9993189446473398, "cum_logprob": -2.2998939023817684, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11950", "text": " False. The proposed answer does not accur", "first_tok_prob": 0.9241051552942056, "cum_logprob": -1.4392402222583769, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-11959", "text": " False. While it's true that", "first_tok_prob": 0.9241143194342841, "cum_logprob": -1.7518163066269992, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12041", "text": " True. The residents of the uninf", "first_tok_prob": 0.9971802102563226, "cum_logprob": -0.09319086697723833, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12079", "text": " True. A motion to dismiss the action", "first_tok_prob": 0.9999411140801217, "cum_logprob": -0.3212213719252759, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12085", "text": " True. The proposed answer is correct.", "first_tok_prob": 0.49999600555242857, "cum_logprob": -3.6502287257417265, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12093", "text": " True. However, it's important", "first_tok_prob": 0.9999471930724098, "cum_logprob": -1.2109340713348047, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12101", "text": " True.\n\nHowever, the proposed", "first_tok_prob": 0.9525353159674649, "cum_logprob": -1.9101451949973125, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12122", "text": " False. The U.S. Supreme", "first_tok_prob": 0.9999306250083795, "cum_logprob": -0.7594422149431921, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12123", "text": " True.\n\nHowever, the proposed", "first_tok_prob": 0.998853568827337, "cum_logprob": -1.1256338182237187, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12209", "text": " True", "first_tok_prob": 0.9999891520726072, "cum_logprob": -0.5327091812496292, "n_tokens": 2, "finish": "stop"}
+{"id": "mmlu_tf-12222", "text": " True.\n\nExplanation:", "first_tok_prob": 0.6791763890107537, "cum_logprob": -2.282585832819329, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12263", "text": " True. Methotrexate", "first_tok_prob": 0.999935154351806, "cum_logprob": -0.7353325627083223, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12310", "text": " True.\n\nThe discrep", "first_tok_prob": 0.562169834450385, "cum_logprob": -2.786187627725667, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12311", "text": " False. The most appropriate osteop", "first_tok_prob": 0.9885787829176047, "cum_logprob": -0.29826488654566674, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12466", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9995747229853186, "cum_logprob": -0.7199228265526472, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12484", "text": " True.\n\nHowever, the proposed", "first_tok_prob": 0.9999647152949072, "cum_logprob": -1.9757514816556068, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12531", "text": " True.\n\nHypnosis", "first_tok_prob": 0.9999718673999347, "cum_logprob": -0.6693740032837923, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12613", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9996432147292739, "cum_logprob": -1.6613133793525776, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12635", "text": " True.\n\nThe primary goal of", "first_tok_prob": 0.9932374053690793, "cum_logprob": -0.7071452867191965, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12667", "text": " False.\n\nAn individual's", "first_tok_prob": 0.9999827149515604, "cum_logprob": -0.6700484258235235, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12697", "text": " True.\n\nWhen the spread of", "first_tok_prob": 0.9999954700677164, "cum_logprob": -0.11087270894901735, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12707", "text": " True. Working memory is the aspect of", "first_tok_prob": 0.9999640000901282, "cum_logprob": -0.478178797995497, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12711", "text": " True.\n\nHowever, it'", "first_tok_prob": 0.9999899865198352, "cum_logprob": -1.2877260825761994, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12715", "text": " False. The proposed answer does not specify", "first_tok_prob": 0.9925546053794057, "cum_logprob": -2.023298616042638, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12723", "text": " False. The most common neurops", "first_tok_prob": 0.817567657259448, "cum_logprob": -0.6153452437774831, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12726", "text": " True. The proposed answer is correct.", "first_tok_prob": 0.9999184674950152, "cum_logprob": -2.164824644692999, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12751", "text": " False. The correct interpretation is that there", "first_tok_prob": 0.9999876023871354, "cum_logprob": -0.6013944382530099, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12762", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.999997854237364, "cum_logprob": -0.9147810182089415, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12769", "text": " False. The selection ratio is defined as", "first_tok_prob": 0.9980643381275621, "cum_logprob": -1.286323268189335, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12771", "text": " True.\n\nTo serve as an", "first_tok_prob": 0.9999974966112362, "cum_logprob": -0.5851747859212537, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12792", "text": " True.\n\nThe proposed answer correctly", "first_tok_prob": 0.9995169589775225, "cum_logprob": -2.027048481570091, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12806", "text": " True.\n\nSelf-disclosure", "first_tok_prob": 0.9999939203633587, "cum_logprob": -0.7827104347533052, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12821", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9984974821411757, "cum_logprob": -1.6229497101176094, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12852", "text": " True. In vivo exposure and", "first_tok_prob": 0.9999938011552557, "cum_logprob": -0.5229324994022306, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12893", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999880792130387, "cum_logprob": -1.2391562643288125, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12903", "text": " False. Job satisfaction is a predictor", "first_tok_prob": 0.999109227905749, "cum_logprob": -2.523501158167903, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12928", "text": " False.\n\nThe proposed answer is", "first_tok_prob": 0.9999920130413283, "cum_logprob": -0.724002290368837, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-12935", "text": " False. The proposed answer cannot be definit", "first_tok_prob": 0.6790633927203693, "cum_logprob": -1.9003397716733161, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13037", "text": " True.\n\nThe proposed answer correctly", "first_tok_prob": 0.9999969005680498, "cum_logprob": -1.0615002025102172, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13167", "text": " True. The proposed answer suggests considering multiple", "first_tok_prob": 0.6223223292346057, "cum_logprob": -3.486039425828494, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13201", "text": " True. The proposed answer correctly identifies", "first_tok_prob": 0.9999713905890374, "cum_logprob": -1.533686838634793, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13212", "text": " True.\n\nThe proposed answer highlight", "first_tok_prob": 0.998951938589048, "cum_logprob": -2.181845059098123, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13223", "text": " No, the proposed answer does not directly", "first_tok_prob": 0.9307148145726135, "cum_logprob": -0.21225461926189837, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13225", "text": " True.\n\nThe proposed answer capt", "first_tok_prob": 0.9999908209686689, "cum_logprob": -1.2825359230555478, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13250", "text": " True.\n\nFrom a realist", "first_tok_prob": 0.9999982118638471, "cum_logprob": -0.465608363714864, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13254", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.961850508877705, "cum_logprob": -1.5071861846558932, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13298", "text": " True. The proposed answer correctly identifies", "first_tok_prob": 0.999874369188163, "cum_logprob": -1.6307595861435402, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13301", "text": " True.\n\n(Note: The", "first_tok_prob": 0.9999837877990074, "cum_logprob": -2.9233022290063673, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13341", "text": " True.\n\nSanctions are indeed", "first_tok_prob": 0.9999947548186582, "cum_logprob": -1.8095586916251705, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13389", "text": " True. Cyber-crime refers", "first_tok_prob": 0.9999921322487634, "cum_logprob": -1.7514359048966526, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13395", "text": " True.\n\nThe proposed answer capt", "first_tok_prob": 0.9998854529966645, "cum_logprob": -0.8874591579033222, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13414", "text": " True.\n\nHowever, the proposed", "first_tok_prob": 0.9045872044298898, "cum_logprob": -1.7126342895783182, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13424", "text": " False. The New Labour government, under", "first_tok_prob": 0.9735531432399198, "cum_logprob": -2.3881267563265283, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13438", "text": " True. Brown and Harris (19", "first_tok_prob": 0.9625176580987245, "cum_logprob": -1.7234487662135507, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13445", "text": " True. The Macpherson Report,", "first_tok_prob": 0.9999207321075279, "cum_logprob": -1.318595133097915, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13448", "text": " False. Chodorow (19", "first_tok_prob": 0.9966641260764405, "cum_logprob": -1.7733540535855354, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13572", "text": " True.\n\nHowever, it should", "first_tok_prob": 0.7772462405605222, "cum_logprob": -2.927933310386152, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13575", "text": " True. The proposed answer correctly describes the", "first_tok_prob": 0.9999973774024795, "cum_logprob": -2.724637938643582, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13580", "text": " False.\n\nThe term 'collect", "first_tok_prob": 0.9999750858798929, "cum_logprob": -0.538811048356358, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13584", "text": " True.\n\nThe proposed answer is", "first_tok_prob": 0.9999744898630243, "cum_logprob": -0.8507088717324223, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13608", "text": " True. Richard Nixon was indeed the", "first_tok_prob": 0.9999268108522246, "cum_logprob": -1.0463897214424307, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13669", "text": " True. However, the exact number can", "first_tok_prob": 0.7299115094476237, "cum_logprob": -3.4425476174696996, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13684", "text": " True.\n\nHowever, without the", "first_tok_prob": 0.9626940635210331, "cum_logprob": -2.5338548233603433, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13702", "text": " True. The phrase \"empire by", "first_tok_prob": 0.9999881984200047, "cum_logprob": -0.6531189020771535, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13751", "text": " False. The proposed answer is not correct", "first_tok_prob": 0.9996540551517366, "cum_logprob": -2.5359600442898227, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13796", "text": " False. Arenaviruses are", "first_tok_prob": 0.9999334856404999, "cum_logprob": -0.06835150335723483, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13822", "text": " True.\n\nBunyav", "first_tok_prob": 0.8175628816520762, "cum_logprob": -1.0466028098213656, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13852", "text": " True.\n\nPositive strand", "first_tok_prob": 0.9980591131939773, "cum_logprob": -1.0895056662827187, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13894", "text": " False. During Japan's occupation of", "first_tok_prob": 0.9998883133686028, "cum_logprob": -0.5809458895018906, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13910", "text": " False. The person associated with the st", "first_tok_prob": 0.9997891632313072, "cum_logprob": -1.7002336892173844, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-13987", "text": " True. Mencius, also known as", "first_tok_prob": 0.999979138810205, "cum_logprob": -1.3133686960923114, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-14005", "text": " False. The first of the Four No", "first_tok_prob": 0.9992518066421435, "cum_logprob": -0.4281288800304992, "n_tokens": 8, "finish": "length"}
+{"id": "mmlu_tf-14020", "text": " True. Ephesus was indeed", "first_tok_prob": 0.9241312227259487, "cum_logprob": -1.0098546999897735, "n_tokens": 8, "finish": "length"}

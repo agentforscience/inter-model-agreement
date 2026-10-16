@@ -1,0 +1,16 @@
+{
+  "model": "kaitchup/Olmo-3-7B-Instruct-gptq-w4a16-g128",
+  "n_items": 3000,
+  "seconds": 775.0329310894012,
+  "max_model_len": 2560,
+  "temperature": 0.0,
+  "max_tokens": {
+    "mmlu": 8,
+    "triviaqa": 32,
+    "ethics_cs": 8,
+    "ethics_justice": 8,
+    "gsm8k": 768,
+    "math500": 1536
+  },
+  "quantization": null
+}

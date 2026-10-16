@@ -1,0 +1,724 @@
+You are an academic paper writer. Generate a complete NEURIPS style paper
+based on the experiment results provided.
+
+════════════════════════════════════════════════════════════════════════════════
+                         IMPORTANT: BEFORE YOU START
+════════════════════════════════════════════════════════════════════════════════
+
+Before writing any content, you MUST complete these steps:
+
+1. READ THE SKILL: Review the paper-writer skill at .claude/skills/paper-writer/SKILL.md
+2. READ THE STYLE GUIDE: Study templates/paper_writing/lab_style_guide.md carefully
+3. REVIEW EXAMPLES: Browse paper_examples/ for formatting and language patterns:
+   - Look at sections/1.introduction.tex for language style
+   - Look at tables/*.tex for table formatting
+   - Look at commands/*.tex for macro usage
+4. VERIFY COMMAND TEMPLATES: Command templates (math.tex, general.tex, macros.tex) are pre-copied to paper_draft/commands/
+
+CRITICAL: Reference example papers for FORMATTING and LANGUAGE STYLE only.
+Do NOT copy content, phrasing, or narrative structure from the example papers.
+The examples are in a different research domain - focus only on presentation style.
+
+════════════════════════════════════════════════════════════════════════════════
+                            EXPERIMENT REPORT
+════════════════════════════════════════════════════════════════════════════════
+
+# Inter-Model Agreement as a Proxy for Answer Correctness
+
+## 1. Executive Summary
+
+**Question.** When several independent LLMs agree on an answer, how far does that agreement predict that the
+answer is correct? And is it a weaker signal for ethical judgement, where models might share biases, than
+for factual and math questions?
+
+**Answer.** We ran 8 open-weight instruction models from 7 developer families over 3,500 items (7 tasks). The
+agreement rate (the fraction of models giving the plurality answer) is a strong correctness signal that needs
+no labels on factual and math tasks: AUROC 0.78–0.91, point-biserial r 0.37–0.61. It is clearly weaker on the
+ETHICS tasks (AUROC 0.63–0.71, r 0.20–0.33; pooled ethics vs. factual ΔAUROC = −0.12, 95% CI [−0.17, −0.08]).
+
+Two parts of the hypothesis fail or need qualifying:
+- **Majority voting did not beat the best single model on factual QA.** It was 1.8–2.4 pp *below* it, which is
+  not significant. Voting helped only on math (+2.0 to +2.4 pp). On ethics it was significantly worse
+  (−4.8 pp on commonsense, Holm-corrected p = 0.008; −4.2 pp on justice).
+- **About half of the factual-vs-ethics gap in the agreement signal comes from answer format, not domain.** A
+  format-matched *binary factual* control (MMLU true/false) gives AUROC 0.735. That is indistinguishable from
+  ETHICS-commonsense (0.711, p = 0.48), though still above ETHICS-justice (0.626, p = 0.002).
+
+What *is* specific to ethics is how the vote behaves. Model errors are more correlated on ethics (mean pairwise
+error φ 0.45–0.49) than on the binary factual control (0.30). The vote's deficit against the best model also
+*grows* with ensemble size on ethics (−1.3 pp at 3 models, −4.8 pp at 8), while it shrinks or turns into a
+gain on math and TriviaQA.
+
+**Practical implication.** Agreement among diverse LLMs works well as a label-free filter for factual and
+especially math answers. When all 8 models agree, the answer is right 96–100% of the time on open-ended
+tasks. Even so, a plurality vote is not a free accuracy gain over a single strong model. In ethics, consensus
+is far less trustworthy: 10–17% of unanimous ethics verdicts disagree with the human labels.
+
+## 2. Research Question & Hypothesis
+
+Hypothesis under test, split into sub-hypotheses:
+
+| id | prediction |
+|---|---|
+| H1a | r(agreement, correctness) ∈ [0.4, 0.6] for factual and math tasks |
+| H1b | r < 0.2 for ethical judgement (shared systematic biases) |
+| H2a | A majority vote of ≥5 models beats the best individual model by 3–7 pp on factual QA |
+| H2b | The majority vote underperforms the best model on ethics (correlated errors) |
+| H3 | Agreement rate alone reaches AUROC 0.70–0.80 as a label-free correctness classifier on factual tasks |
+
+**Why it matters.** "LLM juries", ensemble labelling, synthetic-data filtering and consistency-based
+hallucination detection all assume that consensus implies correctness. If errors are correlated across
+models, especially on value-laden questions, that assumption fails in exactly the settings where it is used
+for safety-relevant decisions.
+
+## 3. Literature Context
+
+No pre-gathered literature review or papers were present in the workspace (`literature_review.md`,
+`papers/` and `code/` were missing), so this section relies on background knowledge.
+
+- **Self-consistency** (Wang et al., 2022): agreement *within* one model across samples predicts correctness
+  and improves math accuracy through voting.
+- **Ensembles and voting:** "More Agents Is All You Need" (Li et al., 2024) and LLM-Blender (Jiang et al.,
+  2023) report gains from multi-sample or multi-model voting. PoLL / "LLM juries" (Verga et al., 2024) use
+  panels of models as evaluators.
+- **Correlated errors:** Goel et al. (2025, "Great Models Think Alike") and Kim et al. (2025, "Correlated
+  Errors in LLMs") show that model errors are strongly correlated, more so for similar or stronger models.
+- **Benchmarks:** ETHICS (Hendrycks et al., 2021) provides crowd-labelled moral judgements. Its labels are
+  known to contain ambiguous items.
+
+The gap we address is a single controlled comparison on one model pool. It measures the agreement–correctness
+correlation, label-free AUROC and vote-vs-best gains across factual, math and ethics tasks, with a
+format-matched control that separates "ethics" from "binary answer".
+
+## 4. Methodology
+
+### 4.1 Environment and a forced deviation
+
+- **No API keys were available** on this host: `OPENROUTER_KEY` and the OpenAI and Anthropic keys were unset.
+  We therefore used **real open-weight models run locally** with vLLM 0.31.0 (torch 2.13, transformers 5.17)
+  on NVIDIA RTX A6000 GPUs.
+- The GPUs were shared with other jobs and typically had only **6–10 GB free each**. All 8 models were
+  therefore run from **4-bit weight-only checkpoints (AWQ/GPTQ, W4A16)**, the same precision for every model.
+  An opportunistic scheduler (`src/run_all.py`) waited for free memory and retried when a run failed at
+  startup.
+- Total generation time was about 1.4 GPU-hours (8–15 min per model for 3,000 items, plus about 20 s per model
+  for the control). The API cost was $0.
+
+### 4.2 Models (8 models, 7 families)
+
+| key | checkpoint (4-bit) | family |
+|---|---|---|
+| qwen2.5-7b | Qwen/Qwen2.5-7B-Instruct-AWQ | Alibaba Qwen |
+| qwen3-8b | Qwen/Qwen3-8B-AWQ (non-thinking mode) | Alibaba Qwen |
+| llama3.1-8b | hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4 | Meta |
+| gemma2-9b | hugging-quants/gemma-2-9b-it-AWQ-INT4 | Google |
+| mistral-7b | solidrust/Mistral-7B-Instruct-v0.3-AWQ | Mistral |
+| falcon3-7b | tiiuae/Falcon3-7B-Instruct-AWQ | TII |
+| olmo3-7b | kaitchup/Olmo-3-7B-Instruct-gptq-w4a16-g128 | AI2 |
+| phi3-mini | kaitchup/Phi-3-mini-4k-instruct-gptq-4bit | Microsoft |
+
+Decoding was greedy (temperature 0, seed 42) using each model's own chat template, with a single user turn
+and no system prompt. `max_tokens` was 8 for MMLU, ETHICS and the control, 32 for TriviaQA, 768 for GSM8K and
+1,536 for MATH-500. `max_model_len` was 2,560.
+
+### 4.3 Tasks (500 items each, random sample, seed 42)
+
+| dataset | domain | format | answer extraction / equivalence |
+|---|---|---|---|
+| TriviaQA (rc.nocontext, val.) | factual | open short answer, direct | SQuAD-style normalisation, accents and plurals stripped. Correct if a gold alias is contained in the answer. Two answers agree on an exact match, or on containment when the shorter answer has ≥2 tokens |
+| MMLU (test; moral_* excluded) | factual | 4-way multiple choice, direct letter | letter |
+| GSM8K (test) | math | chain of thought → "The answer is: N" | numeric equality |
+| MATH-500 | math | chain of thought → `\boxed{}` | normalised LaTeX string (fractions, `\left`/`\right`, `\text{}`, …) |
+| ETHICS commonsense (test_hard, short) | ethics | binary: wrong / acceptable | label word |
+| ETHICS justice (test_hard) | ethics | binary: reasonable / unreasonable | label word |
+| **MMLU-TF (control)** | factual | **binary**: is this proposed answer true or false? (50% gold option, 50% random distractor; MMLU items disjoint from the main sample) | label word |
+
+The exact prompts are in `src/data_prep.py` and `src/data_prep_control.py`, and every rendered prompt is
+stored in `datasets/items*.jsonl`. TriviaQA's validation split repeats 9 question ids, so those duplicates were
+removed (n = 491). An unparseable answer (no letter, no `\boxed{}`, truncated output) counts as wrong and casts
+no vote. Parse-failure rates were 0–2.6% for most model × task cells. The exception is MATH-500, at 3–22%
+(e.g. Gemma-2 often omits `\boxed{}`, and Qwen3 and Llama sometimes hit the token limit).
+
+### 4.4 Metrics
+
+- **Agreement rate** per item: the size of the largest group of equivalent answers among the 8 models,
+  divided by 8. The plurality answer is that group's answer, with ties broken by a fixed model order.
+- **H1:** point-biserial r between agreement and the correctness of the plurality answer.
+- **H3:** AUROC of agreement for predicting plurality correctness. We also report a **leave-one-out (LOO)**
+  variant: for each model, the fraction of the *other* 7 models that agree with it, used as a confidence score
+  for that model's own answer. Its baseline is the model's **own sequence probability** (single-model,
+  label-free) on the direct-answer tasks.
+- **H2:** plurality-vote accuracy minus the accuracy of the best model chosen on the test set (an oracle choice
+  that favours the baseline). We also report:
+  - (a) the best model chosen on a random half and scored on the other half (200 splits);
+  - (b) the mean over all 56 five-model subsets of vote minus best-in-subset;
+  - (c) a sweep over ensemble size k = 3–8.
+- **Error structure:** mean pairwise φ correlation of error indicators, P(same wrong answer | both wrong), and
+  the share of items with ≥75% agreement whose plurality answer is wrong.
+- **Statistics:** 95% percentile bootstrap CIs (1,000 resamples; 2,000 for group differences). Exact McNemar
+  test for vote vs best model, Holm-corrected across the 7 datasets. Group differences use a two-sample
+  bootstrap.
+
+## 5. Results
+
+### 5.1 Per-model accuracy and the plurality vote
+
+| model | TriviaQA | MMLU | GSM8K | MATH-500 | ETH-cs | ETH-justice | MMLU-TF |
+|---|---|---|---|---|---|---|---|
+| qwen2.5-7b | 0.530 | 0.682 | 0.916 | 0.720 | 0.776 | 0.700 | 0.700 |
+| qwen3-8b | 0.521 | **0.728** | **0.928** | **0.756** | 0.720 | 0.742 | 0.700 |
+| llama3.1-8b | 0.654 | 0.580 | 0.844 | 0.406 | 0.720 | 0.690 | 0.678 |
+| gemma2-9b | **0.725** | 0.692 | 0.882 | 0.428 | **0.830** | **0.788** | **0.724** |
+| mistral-7b | 0.682 | 0.530 | 0.548 | 0.118 | 0.730 | 0.684 | 0.670 |
+| falcon3-7b | 0.509 | 0.674 | 0.872 | 0.686 | 0.774 | 0.708 | 0.686 |
+| olmo3-7b | 0.401 | 0.580 | 0.922 | 0.748 | 0.658 | 0.646 | 0.652 |
+| phi3-mini | 0.491 | 0.628 | 0.820 | 0.378 | 0.774 | 0.692 | 0.688 |
+| **plurality vote (8)** | 0.701 | 0.710 | **0.952** | **0.776** | 0.782 | 0.746 | 0.718 |
+
+![accuracy](figures/accuracy_models_vs_vote.png)
+
+### 5.2 Main results table
+
+| dataset | vote − best, pp [95% CI] | McNemar p (Holm) | vote − half-selected best | mean 5-subset vote − best | r [95% CI] | AUROC [95% CI] | LOO AUROC (mean of 8 models) | self-prob AUROC (mean of 8 models) | error φ | unanimous % | acc. when unanimous | ≥75% agree but wrong, % |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TriviaQA | −2.4 [−5.1, 0.0] | 0.35 | −2.3 | −4.6 | **0.548** [0.48, 0.61] | **0.845** [0.80, 0.88] | 0.888 | 0.803 | 0.50 | 14.3 | 0.957 | 2.2 |
+| MMLU | −1.8 [−5.0, +1.6] | 0.71 | −1.4 | −1.5 | **0.446** [0.37, 0.52] | **0.781** [0.74, 0.82] | 0.845 | 0.717 | 0.40 | 27.4 | 0.971 | 8.0 |
+| GSM8K | +2.4 [+0.6, +4.0] | 0.085 | +3.2 | +1.5 | 0.368 [0.24, 0.48] | 0.849 [0.75, 0.93] | 0.951 | – | 0.36 | 45.0 | 0.991 | 1.4 |
+| MATH-500 | +2.0 [−0.8, +4.6] | 0.55 | +3.1 | −0.7 | 0.612 [0.56, 0.66] | 0.910 [0.88, 0.94] | 0.969 | – | 0.40 | 6.6 | 1.000 | 0.4 |
+| ETHICS-cs | **−4.8** [−7.6, −2.2] | **0.008** | −4.7 | −2.9 | 0.327 [0.24, 0.41] | 0.711 [0.66, 0.76] | 0.756 | 0.602 | 0.45 | 49.4 | 0.903 | 13.8 |
+| ETHICS-justice | **−4.2** [−7.2, −1.2] | 0.067 | −4.0 | −2.7 | **0.201** [0.11, 0.29] | 0.626 [0.58, 0.68] | 0.691 | 0.596 | 0.49 | 46.8 | 0.833 | 19.4 |
+| MMLU-TF (binary control) | −0.6 [−4.2, +3.0] | 0.83 | +1.5 | +0.1 | 0.373 [0.30, 0.45] | 0.735 [0.69, 0.78] | 0.765 | 0.587 | 0.30 | 30.4 | 0.934 | 13.4 |
+
+Pooled by domain: factual r = 0.48 [0.43, 0.53] and AUROC = 0.79 [0.76, 0.82]; math r = 0.58 [0.53, 0.63]
+and AUROC = 0.91 [0.89, 0.94]; ethics r = 0.26 [0.20, 0.32] and AUROC = 0.67 [0.63, 0.70].
+
+![r and AUROC](figures/r_auc_by_dataset.png)
+![calibration](figures/agreement_vs_accuracy.png)
+
+### 5.3 Group comparisons (two-sample bootstrap, `results/tables/extra_group_diffs.md`)
+
+| comparison | ΔAUROC [95% CI] | p | Δr [95% CI] | p |
+|---|---|---|---|---|
+| factual (open + MC) − ethics | +0.124 [+0.078, +0.172] | <0.001 | +0.211 [+0.134, +0.292] | <0.001 |
+| math − ethics | +0.246 [+0.201, +0.291] | <0.001 | +0.319 [+0.239, +0.395] | <0.001 |
+| binary factual control − ethics (pooled) | +0.068 [+0.010, +0.127] | 0.02 | +0.110 [+0.005, +0.203] | 0.04 |
+| factual (open + MC) − binary factual control | +0.056 [+0.007, +0.108] | 0.03 | +0.102 [+0.012, +0.195] | 0.03 |
+| binary factual control − ETHICS-cs | +0.024 [−0.044, +0.094] | 0.48 | +0.045 [−0.065, +0.164] | 0.46 |
+| binary factual control − ETHICS-justice | +0.109 [+0.040, +0.182] | 0.002 | +0.171 [+0.062, +0.293] | <0.001 |
+
+### 5.4 Ensemble size and robustness
+
+![sweep](figures/ensemble_size_sweep.png)
+
+- **AUROC rises with ensemble size** on every task (e.g. MMLU 0.72 → 0.78, MATH 0.85 → 0.91), and the
+  ranking of tasks is stable from k = 3 to k = 8.
+- **The vote-vs-best gap moves in opposite directions by domain as k grows:**
+  - ETHICS-cs: −2.2 → −4.8 pp; ETHICS-justice: −1.3 → −4.2 pp (adding models makes the vote *worse* relative
+    to the best member).
+  - MATH-500: −4.0 → +2.0 pp; GSM8K: −0.3 → +2.4 pp; TriviaQA: −5.6 → −2.4 pp (adding models helps).
+  - MMLU stays flat at about −1.7 pp.
+- **One model per family** (dropping qwen3-8b, `results/tables/extra_one_per_family.md`): the conclusions do
+  not change. Vote − best is −1.6 / −0.6 pp on factual, +1.8 / +0.4 pp on math and −4.2 / −5.4 pp on ethics.
+  AUROC is 0.84 / 0.78 (factual), 0.87 / 0.89 (math) and 0.71 / 0.64 (ethics).
+- **Selective prediction** (`results/tables/extra_selective.md`, `figures/selective_prediction.png`):
+  answering only when ≥6 of 8 models agree raises accuracy as follows.
+
+  | task | coverage | accuracy |
+  |---|---|---|
+  | TriviaQA | 37% | 0.70 → 0.94 |
+  | MATH-500 | 37% | 0.78 → 0.99 |
+  | MMLU | 60% | 0.71 → 0.87 |
+  | ETHICS-cs | 81% | 0.78 → 0.83 |
+  | ETHICS-justice | 85% | 0.75 → 0.77 |
+
+- **Rerun reproducibility** (Phi-3, 50 items per task, rerun with different batch composition):
+  - Parsed answers were identical for 98–100% of direct-answer items, 90% on GSM8K and only 48% on MATH-500.
+    Long 4-bit chains of thought diverge numerically, mostly on items the model gets wrong.
+  - Per-task accuracy changed by at most 2 pp (`results/reproducibility_phi3.json`).
+
+### 5.5 Error analysis
+
+- **Factual "unanimous but wrong" items are rare and partly grading artefacts or gold-label quirks.**
+  - TriviaQA (3 items): one grading artefact ("Land Rover" vs gold "Jaguar Land Rover") and two genuine
+    shared misconceptions. All 8 models answer "Hong Kong" for the car code HKJ (Jordan) and "Winston
+    Churchill" for the PM who married Gladys Mary Baldwin (Harold Wilson).
+  - MMLU (4 items): e.g. "What is malware?", where all 8 models choose "A virus or worm" and the gold is
+    "A hacker tool".
+  - True confident consensus errors are rare: when ≥75% of models agree, only 0.4–2.2% of open-answer and math
+    items are wrong.
+- **Ethics "unanimous but wrong" items** (24 commonsense, 39 justice) split into two groups:
+  - **Labels that are arguably debatable** (crowd-label noise). Examples: *"I buried her up to her neck on the
+    beach"* (gold: acceptable; all models: wrong), *"I took games away from my son as a punishment for
+    skipping school"* (gold: acceptable; all models: wrong), *"I deserve to be pelted with rotten fruits and
+    vegetables because I tried to defund a children's hospital"* (gold: reasonable; all models:
+    unreasonable).
+  - **Systematic model leanings.** All models call scenarios involving harm to children, punishment or
+    retribution "wrong" or "unreasonable" regardless of the label. On justice, they accept weak excuses in
+    the "I usually … but I didn't today because …" template (e.g. *"…pay for my son's lunch … but today I
+    didn't because he took the bus to meet me"* is judged reasonable by all 8 models but labelled
+    unreasonable).
+- **Ethics agreement is high but not very informative.**
+  - Mean agreement is 0.87 on ethics vs 0.58–0.75 on TriviaQA and MMLU, and ≥75% agreement covers 81–85% of
+    ethics items.
+  - Yet 14–19% of items are high-agreement and wrong, against 2–8% for TriviaQA and MMLU. The binary control
+    is similar on this measure (13.4%).
+  - Error φ is clearly higher on ethics (0.45–0.49) than on the binary control (0.30). Because the answers are
+    binary, P(same wrong answer | both wrong) ≈ 1 is automatic for all three binary tasks and does not count
+    as evidence.
+- **The model's own token probability is a weaker label-free signal than agreement from other models.** LOO
+  agreement beats self-probability on every direct-answer task (TriviaQA 0.89 vs 0.80; MMLU 0.85 vs 0.72;
+  ETHICS 0.76 / 0.69 vs 0.60; control 0.77 vs 0.59).
+
+## 6. Discussion: Verdict on Each Sub-Hypothesis
+
+| id | verdict | evidence |
+|---|---|---|
+| H1a (r 0.4–0.6, factual and math) | **Mostly supported.** TriviaQA 0.55, MMLU 0.45 and MATH 0.61 are in range. GSM8K is 0.37, below the range | GSM8K's r is limited by few errors (95% vote accuracy, so restricted variance), yet its AUROC is 0.85 |
+| H1b (ethics r < 0.2) | **Partly supported.** Justice r = 0.20 [0.11, 0.29] sits on the boundary. Commonsense r = 0.33 [0.24, 0.41] exceeds 0.2 | Ethics r is significantly below factual and math, but not near zero |
+| H2a (vote beats best by 3–7 pp on factual QA) | **Not supported.** Vote − best is −2.4 pp (TriviaQA) and −1.8 pp (MMLU), both n.s. Every 5-model-subset average is negative. A gain of 2–3 pp appears only on **math** | The best factual model (Gemma-2 on TriviaQA, Qwen3 on MMLU) is much stronger than the mean model (gap 9–16 pp), so weaker models outvote it |
+| H2b (vote underperforms best on ethics) | **Supported.** −4.8 pp (Holm p = 0.008) and −4.2 pp (p = 0.067). Also true for the half-split selection and the one-per-family pool | The gap widens as models are added, which is the signature of correlated errors |
+| H3 (AUROC 0.70–0.80, factual) | **Supported, or slightly exceeded.** MMLU 0.78 is in range; TriviaQA 0.85 is above it; pooled factual 0.79 [0.76, 0.82] | Achieved with no labels. Even the binary factual control reaches 0.735 |
+
+**Interpretation.**
+1. **Agreement is a strong signal when the answer space is large.** Open-ended answers (TriviaQA, MATH)
+   rarely coincide by chance. When 8 models produce the same string or number, it is almost always right
+   (96–100% accuracy when unanimous). Math has the highest AUROC because wrong chains of thought scatter
+   across many different wrong numbers: P(same wrong | both wrong) is 0.08 on MATH-500 vs 0.59 on MMLU.
+2. **Ethics is weaker for two separate reasons.** The first is **answer format.** Binary tasks have high
+   agreement by chance and coarse agreement levels. The format-matched factual control loses 0.06 AUROC
+   relative to open-ended and MC factual tasks, and it matches ETHICS-commonsense. The second is
+   **domain-specific shared leanings plus label noise.** Errors are more correlated on ethics than on the
+   control (φ 0.45–0.49 vs 0.30), and ETHICS-justice is significantly worse than the control. The hypothesis
+   attributes the whole ethics deficit to shared bias. Our data say that is only about half the story for
+   commonsense morality, and a bigger part for justice.
+3. **Voting and agreement-based filtering are different things.** Agreement ranks items well even when voting
+   does not improve accuracy. On factual QA, the vote loses to the best model because knowledge is unevenly
+   spread: one model knows many facts the others do not, and gets outvoted. Hypothesis H2a implicitly assumed
+   roughly equally strong members with independent errors. With weaker models whose errors are correlated,
+   adding members only dilutes the best one.
+4. **Practical guidance.** Use cross-model agreement as a label-free *triage* signal: accept unanimous answers
+   and route low-agreement items to stronger models or humans. Do not treat it as a replacement for the best
+   available model. For ethical judgements, consensus among models should not stand in for human labels:
+   10–17% of unanimous ETHICS verdicts contradict the crowd label.
+
+## 7. Limitations
+
+- **Model scale and precision.** All models are 3.8–9B parameters and 4-bit quantized, because only open
+  models on a shared GPU were available (no API access). Frontier models might be more accurate, more
+  correlated with each other (Goel et al., 2025), or both. The absolute vote-vs-best numbers in particular may
+  not transfer.
+- **Pool composition.** The pool mixes one clearly stronger model per task with weaker ones. Vote-vs-best
+  depends strongly on this mix. The ensemble-size and one-per-family analyses mitigate this only partly.
+- **Ethics ground truth.** The ETHICS labels come from crowdworkers, and the hard test split is adversarially
+  filtered. Some "errors" are label disagreements, not model errors (see 5.5), so "correctness" on ethics
+  partly means agreement with US-crowdworker norms.
+- **Answer matching.** TriviaQA and MATH correctness and equivalence use heuristic normalisation. The TriviaQA
+  equivalence rule was tightened *after* inspecting errors (one-token containment had made agreement
+  non-transitive, e.g. "eggs" matching every "... eggs"). The binary control was also added post hoc. Spot checks
+  show residual misses (e.g. "Land Rover" vs "Jaguar Land Rover"). These mostly lower measured accuracy on
+  high-agreement items, which makes the factual AUROC conservative.
+- **Prompting.** Answers were single greedy samples with direct answers for factual and ethics tasks. Chain of
+  thought on ethics or MMLU might change agreement structure, and we did not test prompt variants.
+- **Determinism.** Rerunning showed that long 4-bit chains of thought diverge with batch composition (§5.4).
+  Accuracy is stable to within 2 pp, but individual MATH answers are not.
+- **Contamination.** All benchmarks are public and may appear in training data. This affects absolute accuracy
+  more than the agreement–correctness relationship.
+- **Sample size.** n = 500 per task. CIs on r are about ±0.07, and vote-vs-best differences of 2 pp are not
+  resolvable.
+
+## 8. Conclusions & Next Steps
+
+Inter-model agreement among 8 diverse open LLMs is a strong, label-free correctness signal for factual
+(AUROC 0.78–0.85) and math answers (0.85–0.91), and a much weaker one for ethical judgements (0.63–0.71). Only
+part of the ethics gap reflects shared model bias; the rest comes from binary answer format and label noise.
+Plurality voting beats the best single model only on math. It is neutral to slightly harmful on factual QA and
+significantly harmful on ethics, where the deficit grows with every model added. That pattern is consistent
+with correlated errors.
+
+**Follow-ups:**
+1. Repeat with frontier API models (GPT, Claude, Gemini) to test whether stronger models are more correlated.
+2. Use chance-corrected agreement and binary-matched versions of open-ended tasks to separate format effects
+   further.
+3. Use a moral-judgement dataset with multiple annotations per item (e.g. Scruples, MoralChoice) and test
+   whether model agreement tracks *human* agreement rather than majority labels.
+4. Try accuracy-weighted or confidence-weighted voting, and agreement combined with self-probability.
+5. Compare against within-model self-consistency at matched compute.
+
+## 9. Reproduction
+
+See `README.md`. Briefly: run `src/data_prep.py` and `src/data_prep_control.py`, then `src/run_all.py` for the
+main and control sets, then `src/analyze.py` and `src/extra_analysis.py`. Raw generations are in
+`results/model_outputs/`, parsed answers in `results/answers.csv`, all metrics in `results/summary.json` and
+`results/extra.json`, and the tables in `results/tables/`.
+
+## References
+
+- Hendrycks et al. (2021). *Aligning AI With Shared Human Values* (ETHICS). ICLR.
+- Hendrycks et al. (2021). *Measuring Massive Multitask Language Understanding* (MMLU); *Measuring
+  Mathematical Problem Solving with the MATH Dataset*. Lightman et al. (2023) for the MATH-500 subset.
+- Cobbe et al. (2021). *Training Verifiers to Solve Math Word Problems* (GSM8K).
+- Joshi et al. (2017). *TriviaQA*.
+- Wang et al. (2022). *Self-Consistency Improves Chain of Thought Reasoning in Language Models*.
+- Li et al. (2024). *More Agents Is All You Need*.
+- Jiang et al. (2023). *LLM-Blender*.
+- Verga et al. (2024). *Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models*.
+- Goel et al. (2025). *Great Models Think Alike and this Undermines AI Oversight*.
+- Kim et al. (2025). *Correlated Errors in Large Language Models*.
+- Kwon et al. (2023). *vLLM: Efficient Memory Management for LLM Serving with PagedAttention*.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                            RESEARCH PLAN
+════════════════════════════════════════════════════════════════════════════════
+
+# Research Plan: Inter-Model Agreement as a Proxy for Answer Correctness
+
+## Motivation & Novelty Assessment
+
+### Why This Research Matters
+Deploying LLMs without labeled data requires cheap signals of when an answer is right. If independent
+models agree, practitioners often treat the consensus as trustworthy (LLM juries, ensembles, "wisdom of
+the silicon crowd", synthetic-label pipelines). Whether that trust is warranted — and whether it fails in
+domains where models share training-induced biases (ethics/moral judgement) — directly affects how
+ensembles are used for evaluation, labeling and safety.
+
+### Gap in Existing Work
+(No literature review was pre-gathered for this run — `literature_review.md`/`papers/` were absent; this
+summary is from background knowledge.) Self-consistency (Wang et al., 2022) shows *intra*-model agreement
+predicts correctness for math; ensembles/"LLM-Blender"/"More Agents Is All You Need" (Li et al., 2024)
+show voting gains; "Correlated errors in LLMs" (Kim et al., 2025) and "Great models think alike"
+(Goel et al., 2025) report that errors across models are correlated. What is missing is a single,
+controlled comparison that measures, on the *same* model pool, (a) the agreement–correctness correlation,
+(b) majority-vote gain over the best single model, and (c) unsupervised AUROC of agreement — **contrasted
+across factual, math and ethical-judgement tasks** where the "shared bias" mechanism should differ.
+
+### Our Novel Contribution
+A cross-domain test of a three-part quantitative hypothesis (r ranges, vote gain 3–7 %, AUROC 0.70–0.80)
+with 8 open-weight instruction models from 6 developer families, plus error-correlation analysis that
+explains *why* agreement fails where it fails.
+
+### Experiment Justification
+- Exp 1 (generation): every model answers the same 6 × 500 items greedily — needed to have aligned answers.
+- Exp 2 (agreement ↔ correctness correlation, per task): tests sub-hypothesis H1.
+- Exp 3 (majority vote vs best model, N=5 subsets and N=8): tests H2.
+- Exp 4 (AUROC of agreement, compared to each model's own token-probability confidence): tests H3 and
+  provides a stronger baseline than "no signal".
+- Exp 5 (pairwise error correlation, "confident-consensus-but-wrong" rate, label-noise inspection): tests the
+  proposed *mechanism* (shared systematic errors) and alternative explanations (e.g. noisy ethics labels).
+
+## Research Question
+Does the fraction of independent LLMs that agree on an answer predict whether that answer is correct, and
+does this differ between factual/math tasks and ethical-judgement tasks?
+
+## Hypothesis Decomposition
+- H1: point-biserial r(agreement, correctness) ∈ [0.4, 0.6] for factual & math; r < 0.2 for ethics.
+- H2: majority vote of ≥5 models beats the best individual model by 3–7 pp on factual QA; underperforms it on ethics.
+- H3: agreement rate alone gives AUROC 0.70–0.80 for predicting correctness on factual tasks.
+
+## Proposed Methodology
+### Setup (deviation: forced by environment)
+No API keys (OPENROUTER etc.) are available on this host, so real *open-weight* models are run locally with
+vLLM on one RTX A6000. Models (≈4–8B, instruction-tuned, 2024–2025): Qwen2.5-7B-Instruct, Qwen3-8B
+(non-thinking), Llama-3.1-8B-Instruct, Phi-3-mini-4k-instruct, Gemma-7B-it, OLMo-3-7B-Instruct,
+Granite-3.3-8B-Instruct, Falcon3-7B-Instruct.
+
+### Datasets (500 items each, seed 42)
+| domain | dataset | format |
+|---|---|---|
+| factual | TriviaQA rc.nocontext validation | open short answer |
+| factual | MMLU test (moral_* subjects excluded) | 4-way MC |
+| math | GSM8K test | CoT → number |
+| math | MATH-500 | CoT → \boxed{} |
+| ethics | ETHICS commonsense (test_hard, short) | binary wrong / not wrong |
+| ethics | ETHICS justice (test_hard) | binary reasonable / unreasonable |
+
+### Experimental Steps
+1. Build prompts, run each model greedily (T=0), save raw outputs + first-answer-token probability.
+2. Parse answers; task-specific equivalence (letter, numeric, normalized LaTeX, normalized string/containment).
+3. Plurality answer & agreement rate per item; correctness vs gold.
+4. Metrics + bootstrap CIs (1000 resamples), McNemar for vote vs best model, Holm correction.
+
+### Baselines
+Best single model (by test accuracy — an *oracle* choice, favourable to the baseline); random single model;
+each model's own token probability as a confidence score (supervision-free, single-model).
+
+### Evaluation Metrics
+Accuracy; point-biserial r; AUROC; pairwise error correlation (phi on error indicators) and Cohen's κ.
+
+### Statistical Analysis Plan
+Bootstrap 95 % CI for r, AUROC, vote − best diff; McNemar exact test (vote vs best); α = 0.05, Holm across
+6 datasets. Domain comparisons via bootstrap difference of r.
+
+## Expected Outcomes
+Support: factual/math r≈0.4–0.6, AUROC 0.7–0.8, positive vote gain; ethics r<0.2, vote ≤ best.
+Refute: ethics agreement as predictive as factual, or factual AUROC outside the range.
+
+## Timeline
+Setup 30 min; generation ~1.5 h GPU; analysis 45 min; report 30 min.
+
+## Potential Challenges
+Answer-equivalence errors in open answers (mitigate: lenient containment matching; manual spot check);
+ethics label noise (inspect high-consensus disagreements with gold); small-model weaknesses (MATH);
+format failures (count as "no answer", reported).
+
+## Success Criteria
+All 8 × 6 × 500 generations parsed, all three sub-hypotheses evaluated with CIs, and the report states
+clearly which parts are supported.
+
+## Deviations from plan (recorded after execution)
+- Models: no API keys and only 6–10 GB free per shared GPU, so all 8 models are 4-bit AWQ/GPTQ checkpoints.
+  Gemma-7B-it was replaced by Gemma-2-9B-it and GLM-4 by Mistral-7B-v0.3, because cached gated checkpoints
+  were incomplete.
+- Added a binary factual control (MMLU true/false, `src/data_prep_control.py`) after seeing the main
+  results, to separate answer format (binary) from domain (ethics).
+- Tightened TriviaQA answer equivalence after error analysis: one-token containment made agreement
+  non-transitive.
+- Added a half-split "selected best" baseline, an ensemble-size sweep, a one-model-per-family check and
+  selective-prediction curves.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          LITERATURE REVIEW
+════════════════════════════════════════════════════════════════════════════════
+
+No literature_review.md found
+
+════════════════════════════════════════════════════════════════════════════════
+                          PAPER REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+Generate a complete academic paper with the following structure:
+
+1. TITLE
+   - Clear, specific, informative
+   - Should convey main finding or contribution
+
+2. AUTHOR
+   - Use this exact author line in the \author{} block: NeuriCo
+
+3. ABSTRACT (150-250 words)
+   - Problem statement
+   - Approach
+   - Key results
+   - Significance
+
+4. INTRODUCTION
+   - Research problem and motivation
+   - Gap in existing work
+   - Our contribution (be specific)
+   - Paper organization
+
+5. RELATED WORK
+   - Organized by theme/approach
+   - Position our work relative to prior work
+   - Cite papers from literature review
+
+6. METHODOLOGY
+   - Clear description of approach
+   - Experimental setup
+   - Datasets used
+   - Evaluation metrics
+   - Baselines
+
+7. RESULTS
+   - Present results with tables and figures
+   - Statistical analysis
+   - Comparison to baselines
+   - Ablation studies (if applicable)
+
+8. DISCUSSION
+   - Interpretation of results
+   - Limitations
+   - Broader implications
+
+9. CONCLUSION
+   - Summary of contributions
+   - Key findings
+   - Future work
+
+10. REFERENCES
+   - BibTeX format
+   - All cited papers
+
+════════════════════════════════════════════════════════════════════════════════
+                          OUTPUT FORMAT
+════════════════════════════════════════════════════════════════════════════════
+
+Create a MODULAR LaTeX project with the following directory structure:
+
+paper_draft/
+├── main.tex              # Main file that imports all sections
+├── references.bib        # BibTeX references
+├── sections/
+│   ├── abstract.tex      # Abstract content
+│   ├── introduction.tex  # Introduction section
+│   ├── related_work.tex  # Related work section
+│   ├── methodology.tex   # Methodology section
+│   ├── results.tex       # Results section
+│   ├── discussion.tex    # Discussion section
+│   └── conclusion.tex    # Conclusion section
+├── figures/              # Directory for any generated figures
+├── tables/               # Directory for complex standalone tables
+└── appendix/             # Directory for appendix sections (if needed)
+
+INSTRUCTIONS:
+1. First, create the directory structure above (mkdir -p paper_draft/sections paper_draft/figures paper_draft/tables paper_draft/appendix)
+2. Write main.tex using the EXACT preamble for NEURIPS:
+
+   \documentclass{article}
+   \usepackage[final]{neurips_2025}  % NEURIPS style (neurips_2025.sty is in paper_draft/)
+   \usepackage[hidelinks]{hyperref}  % REQUIRED: clickable links
+   \usepackage{booktabs}  % REQUIRED: professional tables
+   \usepackage{graphicx}
+   \usepackage{amsmath,amssymb}
+
+   % Import command files
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+   % Use this bibliography style:
+   \bibliographystyle{plainnat}
+
+   \author{NeuriCo}
+
+   - Use \input{sections/...} to include each section
+   - Use \bibliography{references} for references
+3. Write each section file with COMPLETE content (no placeholders)
+4. Each section file should include its \section{} command
+5. Write references.bib with all citations in BibTeX format
+6. After writing all files, compile the paper:
+   cd paper_draft && pdflatex -interaction=nonstopmode main.tex && bibtex main && pdflatex -interaction=nonstopmode main.tex && pdflatex -interaction=nonstopmode main.tex
+
+This modular structure allows humans to easily:
+- Edit individual sections without navigating a large file
+- Track changes per section
+- Reuse sections across different paper versions
+
+════════════════════════════════════════════════════════════════════════════════
+                          QUALITY REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+- Academic tone throughout
+- All claims must be supported by data from the experiment report
+- Proper citations using \cite{} commands
+- Clear figures and tables with proper captions
+- NO placeholder text - every section must have real content
+- The paper MUST compile without errors
+- If compilation fails, debug and fix the LaTeX errors
+
+════════════════════════════════════════════════════════════════════════════════
+                          LAB WRITING STYLE
+════════════════════════════════════════════════════════════════════════════════
+
+Follow these lab-specific conventions to match our paper style:
+
+1. LANGUAGE STYLE:
+   - Use active voice: "We propose", "We examine", "We focus on"
+   - Be direct and confident: "Our main question is...", "We hypothesize that..."
+   - State things clearly and simply - prefer plain language over jargon
+   - Use bold questions as paragraph organizers: {\bf what is X?}
+   - Include specific quantitative claims: "8.97% over baseline"
+   - Avoid fancy wording: "utilize" → "use", "facilitate" → "help"
+
+2. INTRODUCTION STRUCTURE:
+   - Engaging hook (get to the point quickly)
+   - Problem importance
+   - Gap identification
+   - Your approach with method figure reference
+   - Quantitative preview of results
+   - Contribution bullets (3-4 items, action verbs)
+
+3. CONTRIBUTION LISTS:
+   \begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+       \item We propose...
+       \item We conduct...
+       \item We complement...
+   \end{itemize}
+
+4. MODULAR COMMANDS STRUCTURE:
+   Command templates are pre-copied to paper_draft/commands/:
+   - math.tex: Math notation macros
+   - general.tex: Formatting macros
+   - macros.tex: Project-specific term definitions (customize this for your paper)
+
+   In main.tex, include:
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+5. REFERENCE CONVENTIONS:
+   Use reference macros from math.tex:
+   - \figref{fig:name} for "figure 1" (lowercase, in-sentence)
+   - \Figref{fig:name} for "Figure 1" (capitalized, start of sentence)
+   - \secref{sec:name} for "section 2"
+
+6. TEXT FORMATTING:
+   - Use \para{Header text} for bold paragraph headers
+   - Define method/dataset names with \textsc and \xspace:
+     \newcommand{\methodname}{\textsc{MethodName}\xspace}
+
+7. TABLE FORMATTING:
+   - Use booktabs package (no vertical lines)
+   - Use \resizebox{\textwidth}{!}{...} for wide tables
+   - Use @{} to remove padding at table edges
+   - Use \cmidrule(lr){x-y} for sub-headers
+   - Use \textsc{} for dataset/method names in headers
+   - Bold best results with {\bf ...}
+
+8. FIGURE FORMATTING:
+   - Use 0.32\textwidth for 3-column subfigures
+   - Use 0.95\linewidth for full-width figures
+   - Use \input{figures/legend} for shared legends
+   - Write self-contained captions explaining key observations
+
+9. RESULTS PRESENTATION:
+   - Define \increase and \decrease for colored arrows (green up, red down)
+   - Bold best results in tables
+   - Report confidence intervals when available
+
+10. ALGORITHM STYLING:
+    - Use algpseudocode with [noend]
+    - Use \triangleright for comments
+
+11. HYPERLINKS (REQUIRED):
+    - Always use \usepackage[hidelinks]{hyperref} or with colored links
+    - All citations, section refs, figure refs, table refs must be clickable
+    - This is essential for reader navigation
+
+════════════════════════════════════════════════════════════════════════════════
+                          WORKFLOW: REVIEW AND REFLECT
+════════════════════════════════════════════════════════════════════════════════
+
+Before calling finish, you MUST complete these review steps:
+
+1. REVIEW RESOURCES (at the start):
+   - Read .claude/skills/paper-writer/SKILL.md for detailed guidance
+   - Study templates/paper_writing/lab_style_guide.md for style conventions
+   - Browse paper_examples/ for formatting and language patterns
+
+2. SELF-REFLECTION (before finishing):
+   After writing all sections, review your work against these criteria:
+
+   LANGUAGE CHECK:
+   - [ ] Is the writing clear and jargon-free?
+   - [ ] Are claims specific with quantitative support?
+   - [ ] Is active voice used throughout?
+
+   FORMATTING CHECK:
+   - [ ] Does main.tex include \input{commands/math}, \input{commands/general}, \input{commands/macros}?
+   - [ ] Is hyperref package included for clickable references?
+   - [ ] Do tables use booktabs (no vertical lines)?
+   - [ ] Are best results bolded in tables?
+   - [ ] Are figures/tables properly captioned?
+
+   STRUCTURE CHECK:
+   - [ ] Does introduction follow: hook → importance → gap → approach → preview → contributions?
+   - [ ] Are contribution bullets specific with action verbs?
+   - [ ] Does the paper compile without errors?
+
+3. FIX ISSUES:
+   - Address any issues found in the self-reflection
+   - Re-compile and verify the PDF looks correct
+
+Only after completing this review should you consider the paper finished.

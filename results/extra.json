@@ -1,0 +1,268 @@
+{
+  "factual(open+MC) - ethics": {
+    "auc": {
+      "diff": 0.1244622832220097,
+      "ci": [
+        0.07786554971067826,
+        0.1720151257777144
+      ],
+      "p_two_sided": 0.0
+    },
+    "r": {
+      "diff": 0.2114331357036059,
+      "ci": [
+        0.13417469278545782,
+        0.29152906129770245
+      ],
+      "p_two_sided": 0.0
+    }
+  },
+  "math - ethics": {
+    "auc": {
+      "diff": 0.24639401335877487,
+      "ci": [
+        0.20137659431265514,
+        0.29108474071905965
+      ],
+      "p_two_sided": 0.0
+    },
+    "r": {
+      "diff": 0.31874194776880593,
+      "ci": [
+        0.23885654961954572,
+        0.3950145094373933
+      ],
+      "p_two_sided": 0.0
+    }
+  },
+  "binary factual control (mmlu_tf) - ethics": {
+    "auc": {
+      "diff": 0.06829280264036108,
+      "ci": [
+        0.00977441560321955,
+        0.1266118100912042
+      ],
+      "p_two_sided": 0.02
+    },
+    "r": {
+      "diff": 0.10951375589499168,
+      "ci": [
+        0.00520578798944846,
+        0.20316018136364672
+      ],
+      "p_two_sided": 0.04
+    }
+  },
+  "factual(open+MC) - binary factual control (mmlu_tf)": {
+    "auc": {
+      "diff": 0.05616948058164861,
+      "ci": [
+        0.0067309815538979245,
+        0.1076765285576739
+      ],
+      "p_two_sided": 0.03
+    },
+    "r": {
+      "diff": 0.10191937980861421,
+      "ci": [
+        0.011939667092851776,
+        0.19450177234145774
+      ],
+      "p_two_sided": 0.027
+    }
+  },
+  "binary factual control (mmlu_tf) - ethics_cs": {
+    "auc": {
+      "diff": 0.024492245537077295,
+      "ci": [
+        -0.04393602072830034,
+        0.09394794367107567
+      ],
+      "p_two_sided": 0.483
+    },
+    "r": {
+      "diff": 0.045148750813299277,
+      "ci": [
+        -0.065272206700077,
+        0.16394754457488345
+      ],
+      "p_two_sided": 0.463
+    }
+  },
+  "binary factual control (mmlu_tf) - ethics_justice": {
+    "auc": {
+      "diff": 0.10886500211296257,
+      "ci": [
+        0.04034688894246152,
+        0.18242342711837586
+      ],
+      "p_two_sided": 0.002
+    },
+    "r": {
+      "diff": 0.1712051296431537,
+      "ci": [
+        0.06177710232313624,
+        0.2934208071162558
+      ],
+      "p_two_sided": 0.0
+    }
+  },
+  "one_per_family": [
+    {
+      "dataset": "triviaqa",
+      "best": "gemma2-9b (0.725)",
+      "vote acc": 0.709,
+      "vote \u2212 best (pp)": -1.6,
+      "r": 0.538,
+      "AUROC": 0.841
+    },
+    {
+      "dataset": "mmlu",
+      "best": "gemma2-9b (0.692)",
+      "vote acc": 0.686,
+      "vote \u2212 best (pp)": -0.6,
+      "r": 0.462,
+      "AUROC": 0.784
+    },
+    {
+      "dataset": "gsm8k",
+      "best": "olmo3-7b (0.922)",
+      "vote acc": 0.94,
+      "vote \u2212 best (pp)": 1.8,
+      "r": 0.438,
+      "AUROC": 0.869
+    },
+    {
+      "dataset": "math500",
+      "best": "olmo3-7b (0.748)",
+      "vote acc": 0.752,
+      "vote \u2212 best (pp)": 0.4,
+      "r": 0.587,
+      "AUROC": 0.891
+    },
+    {
+      "dataset": "ethics_cs",
+      "best": "gemma2-9b (0.830)",
+      "vote acc": 0.788,
+      "vote \u2212 best (pp)": -4.2,
+      "r": 0.321,
+      "AUROC": 0.711
+    },
+    {
+      "dataset": "ethics_justice",
+      "best": "gemma2-9b (0.788)",
+      "vote acc": 0.734,
+      "vote \u2212 best (pp)": -5.4,
+      "r": 0.223,
+      "AUROC": 0.64
+    },
+    {
+      "dataset": "mmlu_tf",
+      "best": "gemma2-9b (0.724)",
+      "vote acc": 0.714,
+      "vote \u2212 best (pp)": -1.0,
+      "r": 0.366,
+      "AUROC": 0.727
+    }
+  ],
+  "selective": [
+    {
+      "dataset": "triviaqa",
+      "threshold": 0.75,
+      "coverage": 0.369,
+      "accuracy (kept)": 0.939,
+      "accuracy (all)": 0.701
+    },
+    {
+      "dataset": "triviaqa",
+      "threshold": 1.0,
+      "coverage": 0.143,
+      "accuracy (kept)": 0.957,
+      "accuracy (all)": 0.701
+    },
+    {
+      "dataset": "mmlu",
+      "threshold": 0.75,
+      "coverage": 0.604,
+      "accuracy (kept)": 0.868,
+      "accuracy (all)": 0.71
+    },
+    {
+      "dataset": "mmlu",
+      "threshold": 1.0,
+      "coverage": 0.274,
+      "accuracy (kept)": 0.971,
+      "accuracy (all)": 0.71
+    },
+    {
+      "dataset": "gsm8k",
+      "threshold": 0.75,
+      "coverage": 0.854,
+      "accuracy (kept)": 0.984,
+      "accuracy (all)": 0.952
+    },
+    {
+      "dataset": "gsm8k",
+      "threshold": 1.0,
+      "coverage": 0.45,
+      "accuracy (kept)": 0.991,
+      "accuracy (all)": 0.952
+    },
+    {
+      "dataset": "math500",
+      "threshold": 0.75,
+      "coverage": 0.374,
+      "accuracy (kept)": 0.989,
+      "accuracy (all)": 0.776
+    },
+    {
+      "dataset": "math500",
+      "threshold": 1.0,
+      "coverage": 0.066,
+      "accuracy (kept)": 1.0,
+      "accuracy (all)": 0.776
+    },
+    {
+      "dataset": "ethics_cs",
+      "threshold": 0.75,
+      "coverage": 0.81,
+      "accuracy (kept)": 0.83,
+      "accuracy (all)": 0.782
+    },
+    {
+      "dataset": "ethics_cs",
+      "threshold": 1.0,
+      "coverage": 0.494,
+      "accuracy (kept)": 0.903,
+      "accuracy (all)": 0.782
+    },
+    {
+      "dataset": "ethics_justice",
+      "threshold": 0.75,
+      "coverage": 0.85,
+      "accuracy (kept)": 0.772,
+      "accuracy (all)": 0.746
+    },
+    {
+      "dataset": "ethics_justice",
+      "threshold": 1.0,
+      "coverage": 0.468,
+      "accuracy (kept)": 0.833,
+      "accuracy (all)": 0.746
+    },
+    {
+      "dataset": "mmlu_tf",
+      "threshold": 0.75,
+      "coverage": 0.688,
+      "accuracy (kept)": 0.805,
+      "accuracy (all)": 0.718
+    },
+    {
+      "dataset": "mmlu_tf",
+      "threshold": 1.0,
+      "coverage": 0.304,
+      "accuracy (kept)": 0.934,
+      "accuracy (all)": 0.718
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[final]{neurips_2025}  % NEURIPS style
+\makeatletter\providecommand{\@trackname}{Preprint.}\makeatother  % [final] without a track option leaves this undefined
+\usepackage[hidelinks]{hyperref}  % clickable links
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% Import command files
+\input{commands/math}
+\input{commands/general}
+\input{commands/macros}
+
+\captionsetup[table]{aboveskip=4pt,belowskip=4pt}
+\captionsetup[figure]{aboveskip=4pt,belowskip=4pt}
+
+\bibliographystyle{plainnat}
+
+\title{When Models Agree: Inter-Model Consensus Predicts Correctness for Facts and Math, but Much Less for Ethics}
+
+\author{NeuriCo}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/methodology}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+\bibliography{references}
+
+\appendix
+\input{appendix/details}
+
+\end{document}
